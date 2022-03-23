@@ -1,0 +1,61 @@
+<html>
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0"/>
+    <script src="https://gonyyi.com/js/pagen.min.js"></script>
+    <script src="wasm_exec.js"></script>
+    <script>
+        const go = new Go();
+        WebAssembly.instantiateStreaming(fetch("gon_enc.wasm"), go.importObject).then((result) => {
+            go.run(result.instance);
+        });
+    </script>
+</head>
+<body>
+
+<section>
+    <h2>AES-256-CBC + MD5 Key Digest + Base64 Test</h2>
+    <ul>
+        <li>
+            <input type="password" class="width-40" id="key" autocomplete="off" placeholder="passphrase" autofocus>
+            <label for="key">Passphrase</label>
+        </li>
+        <li>
+            <input type="text" id="data" class="width-40" placeholder="data">
+            <label for="data">Data encrypted or plain</label>
+        </li>
+        <li>
+            <button id="btnEnc">Encrypt</button>
+            <button id="btnDec">Decrypt</button>
+            <span id="result" class="noCasing" style="user-select: all;"></span>
+        </li>
+    </ul>
+</section>
+
+
+<script>
+    var result = document.getElementById('result');
+    var boxKey = document.getElementById('key');
+    var boxData = document.getElementById('data');
+    var btnEnc = document.getElementById('btnEnc');
+    var btnDec = document.getElementById('btnDec');
+
+    // When the encrypt button is clicked
+    btnEnc.addEventListener('click', function () {
+        var out = gonEnc(boxData.value, boxKey.value);
+        // console.info("Key:    [" + boxKey.value + "]");
+        // console.info("- Data: [" + boxData.value + "]");
+        console.info("- Encr: [" + out + "]");
+        result.innerHTML = out;
+    });
+
+    // When the encrypt button is clicked
+    btnDec.addEventListener('click', function () {
+        var out = gonDec(boxData.value, boxKey.value);
+        // console.info("Key:    [" + boxKey.value + "]");
+        // console.info("- Data: [" + boxData.value + "]");
+        console.info("- Decr: [" + out + "]");
+        result.innerHTML = out;
+    });
+</script>
+</body>
+</html>
