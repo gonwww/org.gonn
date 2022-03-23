@@ -58,6 +58,21 @@
         /*input:focus::placeholder,input:active::placeholder,input:hover::placeholder {color: #8af; opacity: 1;}*/
         :-ms-input-placeholder {color: #8af;}::-ms-input-placeholder {color: #69e;}
         ::placeholder {color: #8af; opacity: 1;}
+        textarea{resize: none;}
+        textarea::-webkit-scrollbar {
+            width: 15px;
+            border-radius: 10px;
+            background: transparent;
+        }
+        textarea::-webkit-scrollbar-track {
+            /*box-shadow: inset 0 0 5px grey;*/
+            background: white;
+            border-radius: 10px;
+        }
+        textarea::-webkit-scrollbar-thumb {
+            background: orange;
+            border-radius: 10px;
+        }
 
 
         -->
