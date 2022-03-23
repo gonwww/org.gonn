@@ -1,36 +1,99 @@
-<html>
+<!DOCTYPE html> 
+<html lang="en">
+<!-- Copyright (c) Gon Y. Yi 2022 -->
 <head>
+    <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0"/>
-    <script src="https://gonyyi.com/js/pagen.min.js"></script>
+    <meta name="theme-color" content="#37e"/>
+    <meta property="og:locale" content="en_US"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="https://gonn.org"/>
+    <meta property="og:site_name" content="Gonn"/>
+    <meta property="og:title" content="Gonn"/>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
+    <link rel="apple-touch-icon" href="/favicon.png" sizes="any">
+    <link rel="alternate icon" href="/favicon.ico"/>
+    <title>Enc - Gonn</title>
+    <style>
+        <!--
+        html{background:#ddd; font-size: 8px;} 
+        body{margin:0;padding:0 2rem;font-size: 3rem;
+            font-family:"Times","Times New Roman",serif,sans-serif;} 
+        #logo {
+            display:block; background:red; 
+            margin:0rem 1rem; padding:3rem 1rem 1rem 1rem; 
+            width: 3rem; height: 3rem;}
+        #GY {stroke: white;}
+        p, footer {
+            margin:1rem; padding: 1rem 0rem;}
+        footer{
+            border-top:1px solid #aaa; color: #777; font-size: 2rem;}
+
+
+        /* 
+          FORM 
+        */
+        label {font-size: 2rem; color: #555;}
+
+        .btn, button, input, textarea {
+          margin:0;
+          border-radius: 1rem; border: .4rem solid #69e;
+          font-size: 2rem; 
+          padding: 1rem; outline: none;
+          font-family: sans-serif;
+        }
+        .btn, button {background-color: #69e; color: #fff; display: inline-block;}
+        .btn:hover, .btn:focus, .btn:active, button:hover, button:focus, button:active {border-color: #17f; background-color: #17f;color: #fff;}
+
+        .btnRed {border-color: #f55; background-color: #f55;}
+        .btnRed:hover, .btnRed:focus, .btnRed:active {border-color: #f00; background-color: #f00;}
+        .btnOrange {border-color: #f94; background-color: #f94;}
+        .btnOrange:hover, .btnOrange:focus, .btnOrange:active {border-color: #f72; background-color: #f72;}      
+        .btnGray {border-color: #aaa; background-color: #aaa;}
+        .btnGray:hover, .btnGray:focus, .btnGray:active {border-color: #777; background-color: #777;}
+
+        input,textarea{background-color: #fff; color: #555;}
+        input:hover,textarea:hover{ border-color: #17f; background-color: #eef; color: #69e; }
+        input:focus,input:active,textarea:focus,textarea:active{ border-color: #17f;  background-color: #17f; color: #fff; caret-color: #fff;}
+        /*input:focus::placeholder,input:active::placeholder,input:hover::placeholder {color: #8af; opacity: 1;}*/
+        :-ms-input-placeholder {color: #8af;}::-ms-input-placeholder {color: #69e;}
+        ::placeholder {color: #8af; opacity: 1;}
+
+
+        -->
+    </style>
     <script src="wasm_exec.js"></script>
     <script>
+        <!--
         const go = new Go();
         WebAssembly.instantiateStreaming(fetch("./gon_enc.wasm"), go.importObject).then((result) => {
             go.run(result.instance);
         });
+        -->
     </script>
 </head>
 <body>
+    <div id="logo">
+        <svg id="DSYIM" viewBox="0 0 100 100" width="3rem" height="3rem" version="1.1" xmlns="http://www.w3.org/2000/svg">
+            <title>DSYiM</title>
+            <g id="GY" fill="transparent" stroke="#000" stroke-width="3"><path id="M" d="M30,3C36,3 43,3 50,10C50,10 57,3 64,3H97V30C97,37 97,43 90,50C90,50 97,57 97,64V97H70C64,97 57,97 50,90C50,90 43,97 37,97H3V70C3,64 3,57 10,50C10,50 3,43 3,37V3H30"/><circle id="S" cx="50" cy="50" r="30"/><path id="Y" d="M30,50H70M43,50V37M57,50V37"/><path id="G" d="M40,63L60,63M50,57V69"/></g>
+        </svg>    
+    </div>
 
 <section>
-    <h2>AES-256-CBC</h2>
-    <i>Compatible with OpenSSL</i>
-    <ul>
-        <li>
-            <textarea id="data" rows="5" style="width:80%;" placeholder="encrypted or plain" autocomplete="one-time-code" autofocus></textarea>
-        </li>
-        <li>
-            <input type="password" id="key" style="width:80%;" autocomplete="one-time-code" placeholder="key">
-        </li>
-        <li>
-            <button id="btnEnc">Encrypt</button>
-            <button id="btnDec">Decrypt</button>        
-        </li>
-    </ul>
+    <p>Encryption</p>
+    <p>
+        <textarea id="data" rows="5" style="width:60rem;max-width:100%;" placeholder="encrypted or plain" autocomplete="one-time-code" autofocus></textarea>
+        <br/>
+        <input type="password" id="key" style="width:60rem;max-width:100%;" autocomplete="one-time-code" placeholder="key">
+        <br/><br/>
+        <button id="btnEnc">Encrypt</button>
+        <button id="btnDec">Decrypt</button>
+    </p>
 </section>
 
-
 <script>
+    <!--
     var boxKey = document.getElementById('key');
     var boxData = document.getElementById('data');
     var btnEnc = document.getElementById('btnEnc');
@@ -52,6 +115,7 @@
         boxData.select();
     });
     boxData.select();
+    -->
 </script>
 </body>
 </html>
