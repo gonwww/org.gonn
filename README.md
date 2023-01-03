@@ -2,13 +2,19 @@
 
 ![gonn.org](https://gonn.org/dsyim.svg "DSYiM")
 
-- 1/3/2022, Updated DSYiM to version v51. Candidate for `org.gonn v1.0.0`
-    DSYiM v51 has simpler "Y" (similar to `++`) and text representation will be `>(++)<` or simply `(++)`.
-    It is modified "Yo" character to make it symmetry vertically and horizontally.
-    - Also, SVG has been updated to 
+- v1.0.0
+    - 1/3/2022, Updated DSYiM to version v51. DSYiM v51 has simpler "Y" (similar to `++`) 
+        and text representation will be `>(++)<` or simply `(++)`. It is modified "Yo" 
+        character to make it symmetry vertically and horizontally.
+        - Also, PNG and ICO have been updated accordingly.
+        - Added meta description tags.
 
 
 ## Todo
 
-- [X] Make it a structural outline -- instead of `section/h2` for title, use `h1`, so it can be structured.
+- [X] G100 -- Make it a structural outline -- instead of `section/h2` for title, 
+    use `h1`, so it can be structured.
+- [ ] G101 -- Except for the main entry point (/), separate CSS and SVG into separate
+    files.
+- [ ] G102 -- Change the color on `/enc` page to have more contrast.
 
