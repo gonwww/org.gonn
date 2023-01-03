@@ -1,9 +1,10 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <!-- Copyright (c) Gon Y. Yi 2022-2023 -->
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1.0,minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0">
     <meta name="theme-color" content="#37e">
     <meta name="description" content="AES-256-CBC Encryption - Gonn">
     <meta property="og:locale" content="en_US">
@@ -60,10 +61,6 @@
         :-ms-input-placeholder  {color: #bbb; font-size: 2.6rem;}
         ::-ms-input-placeholder {color: #bbb; font-size: 2.6rem;}
         ::placeholder {color: #bbb; opacity: 1; font-size: 2.6rem;}
-        textarea {resize: none;}
-        textarea::-webkit-scrollbar {width: 2rem; border-radius: 1rem; background: transparent; }
-        textarea::-webkit-scrollbar-track {background: white; border-radius: 1rem; }
-        textarea::-webkit-scrollbar-thumb {background: orange; border-radius: 1rem; }
         -->
     </style>
 
@@ -95,11 +92,11 @@
     <h1>Encryption</h1>
     <div>        
         For AES-256-CBC
-        <textarea id="data" class="block" rows="5" style="width:80rem;max-width:100%;" placeholder="encrypted or plain" autocomplete="one-time-code"></textarea>
-        <input type="password" id="key" class="block" style="width:80rem;max-width:100%;" placeholder="key" autocomplete="one-time-code">
+        <textarea id="data" class="block" rows="5" style="width:80rem;max-width:100%;" placeholder="Encrypted or plain text" autocomplete="one-time-code" tabindex="1"></textarea>
+        <input type="password" id="key" class="block" style="width:80rem;max-width:100%;" placeholder="Secret key" autocomplete="one-time-code"  tabindex="2">
 
-        <button id="btnEnc">Encrypt</button>
-        <button id="btnDec">Decrypt</button>
+        <button id="btnEnc" tabindex="3">Encrypt</button>
+        <button id="btnDec" tabindex="4">Decrypt</button>
     </div>
 
     <script>
