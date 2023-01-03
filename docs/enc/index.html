@@ -41,31 +41,26 @@
     <style>
         <!--
         /* =============== FORM =============== */
-        label {font-size: 3rem; color: #555;}
+        label {font-size: 3rem; color: #ddd;}
         .block {display: block; margin: 2rem 0;}
         .btn, button, input, textarea {
           margin:0;
-          border-radius: 1rem; border: .4rem solid #69e;
+          border-radius: 1rem; border: .5rem solid #aaa;
           font-size: 3rem; 
           padding: 1rem; outline: none;
           font-family: sans-serif;
         }
-        .btn, button {background-color: #69e; color: #fff; display: inline-block;}
+        .btn, button {background-color: #aaa; color: #fff; display: inline-block;}
         .btn:hover, .btn:focus, .btn:active, button:hover, button:focus, button:active {
             border-color: #17f; background-color: #17f;color: #fff;}
-        .btnRed {border-color: #f55; background-color: #f55;}
-        .btnRed:hover, .btnRed:focus, .btnRed:active {border-color: #f00; background-color: #f00;}
-        .btnOrange {border-color: #f94; background-color: #f94;}
-        .btnOrange:hover, .btnOrange:focus, .btnOrange:active {border-color: #f72; background-color: #f72;}      
-        .btnGray {border-color: #aaa; background-color: #aaa;}
-        .btnGray:hover, .btnGray:focus, .btnGray:active {border-color: #777; background-color: #777;}
+        
         input, textarea {background-color: #fff; color: #555; box-sizing: border-box;}
-        input:hover, textarea:hover { border-color: #17f; background-color: #eef;}
-        input:focus, input:active, textarea:focus, textarea:active {
-            border-color: #17f; background-color: #17f; color: #fff; caret-color: #fff;}
-        :-ms-input-placeholder  {color: #8af;}
-        ::-ms-input-placeholder {color: #8af;}
-        ::placeholder {color: #8af; opacity: 1;}
+        /*input:hover, textarea:hover { border-color: #17f; background-color: #fff;}*/
+        input:focus, textarea:focus, input:active, textarea:active {
+            border-color: #17f; background-color: #fff; color: #333; caret-color: #000;}
+        :-ms-input-placeholder  {color: #bbb; font-size: 2.5rem;}
+        ::-ms-input-placeholder {color: #bbb; font-size: 2.5rem;}
+        ::placeholder {color: #bbb; opacity: 1; font-size: 2.5rem;}
         textarea {resize: none;}
         textarea::-webkit-scrollbar {width: 15px; border-radius: 10px; background: transparent; }
         textarea::-webkit-scrollbar-track {background: white; border-radius: 10px; }
