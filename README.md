@@ -10,5 +10,5 @@
 
 ## Todo
 
-- [ ] Make it a structural outline -- instead of `section/h2` for title, use `h1`, so it can be structured.
+- [X] Make it a structural outline -- instead of `section/h2` for title, use `h1`, so it can be structured.
 
