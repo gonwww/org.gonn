@@ -16,5 +16,5 @@
     use `h1`, so it can be structured.
 - [ ] G101 -- Except for the main entry point (/), separate CSS and SVG into separate
     files.
-- [ ] G102 -- Change the color on `/enc` page to have more contrast.
-
+- [X] G102 -- Change the color on `/enc` page to have more contrast.
+- [X] G103 -- Recreated DSYiM from the scratch. (1/4/2023, v52)
