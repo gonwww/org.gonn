@@ -1,59 +1,59 @@
 <svg xmlns="http://www.w3.org/2000/svg" version="1.1" 
-	width="500" height="500" viewBox="0 0 500 500" 
-	stroke="#FFF" stroke-width=".5" 
-	fill="#002082"
+	width="500" height="500" viewBox="0 0 500 500"
 	id="blueprint">
 	<title>DSYiM Blueprint</title><desc>DSYiM v52 (c) Gon Y. Yi</desc>
 
-
 	<!-- Outer box -->
-	<rect x="0" y="0" width="500" height="500" stroke-width=".6"></rect>
-	<g stroke-width=".3" stroke="#777">
-		<path id="line" d="M0,50H500 M0,100H500 M0,150H500 M0,200H500 M0,250H500 M0,300H500 M0,350H500 M0,400H500 M0,450H500"/>
-		<use href="#line" x="0" y="0" transform="rotate(90 250 250)"/>
-	</g>
-
-	<!-- DSYiM --> 
-	<svg id="DSYiM" xmlns="http://www.w3.org/2000/svg" version="1.1" x="50" y="50" height="400" width="400" 
-		fill="transparent" stroke="yellow" stroke-width=".2" viewBox="0 0 100 100">
-		<g id="dsyim">
-			<title>DSYiM-v52</title><desc>(c) 2023 Gon Yi</desc>
-			<path id="map-v51" d="M5,5 V35 C5,35 05,45 10,50 C10,50 05,55 5,65 V95 H35 C35,95 45,95 50,90 C50,90 55,95 65,95 H95 V65 C95,65 95,55 90,50 C90,50 95,45 95,35 V5 H65 C65,5 55,5 50,10 C50,10 45,5 35,5 H5Z"/>
-			<circle id="shield" cx="50" cy="50" r="30"/>
-			<path id="yi" d="M32,50H68 M44,38V62 M56,38V62"/>
+	<svg>
+		<rect x="0" y="0" fill="#191970" width="500" height="500"></rect>
+		<g stroke-width=".1" stroke="#555">
+			<path id="line" d="M0,50H500 M0,100H500 M0,150H500 M0,200H500 M0,250H500 M0,300H500 M0,350H500 M0,400H500 M0,450H500"/>
+			<use href="#line" x="0" y="0" transform="rotate(90 250 250)"/>
 		</g>
+	</svg>
+	
 
-		<g id="control" stroke="gray" stroke-dasharray=".4" stroke-width=".1">
-			<refs>
-				<g id="circly" x="0" y="0" width="15">
-					<circle cx="5"  cy="5"  r="10"/>
-					<circle cx="5"  cy="0"  r="5"/>
-					<circle cx="5"  cy="10" r="5"/>
-					<circle cx="0"  cy="5"  r="5"/>
-					<circle cx="10" cy="5"  r="5"/>
-				</g>
-			</refs>
+	<!-- OVERLAY -->
+	<svg id="DSYiM" xmlns="http://www.w3.org/2000/svg" version="1.1" x="25" y="25" height="450" width="450" 
+		fill="transparent" stroke="yellow" stroke-width=".3" viewBox="0 0 100 100">
+		
+		<style><![CDATA[
+				text { font-size: 2px; fill:white; stroke-width:0;}
+				.big { font-size: 2.5px; text-anchor: middle;}
+				.sz { fill:#aaa; text-anchor:middle;}
+		]]></style>
 
-			<g id="map" stroke="#fff">
-				<path d="M0,0   H100  V100 H0  V0" stroke="#fff" stroke-width=".3" stroke-dasharray="0" />   Outer limit
-				<path d="M5,5   H95   V95  H5  V5"/>   Inter
-				<path d="M10,10 H90   V90 H10 V10"/>  Inter limit
+		<refs>
+			<g id="circly" x="0" y="0" width="15" stroke-dasharray=".4">
+				<circle cx="5"  cy="5"  r="10" stroke-dasharray=".2"/>
+				<circle cx="5"  cy="0"  r="5"/>
+				<circle cx="5"  cy="10" r="5"/>
+				<circle cx="0"  cy="5"  r="5"/>
+				<circle cx="10" cy="5"  r="5"/>
+			</g>
+		</refs>
+
+		<g id="control" stroke="#666" stroke-dasharray=".4" stroke-width=".1">
+			
+			<g id="map" stroke="#566">
+				<path d="M0,0   H100  V100 H0  V0" stroke="#fff" stroke-width=".3" stroke-dasharray="0" />
+				<path d="M5,5   H95   V95  H5  V5"/>
+				<path d="M10,10 H90   V90 H10 V10"/>
 
 				<g id="cross">
-					<path d="M0 ,50 H100"/>  Inter limit
-					<path d="M50,0  V100"/>  Inter limit
+					<path d="M0 ,50 H100"/>
+					<path d="M50,0  V100"/>
 				</g>
 
 				<g id="boxes">
 					<rect x="5"  y="35" width="10" height="30"/>
-					<rect x="85" y="35" width="10" height="30"/>
-
-					<rect x="35" y="85" width="30" height="10"/>
 					<rect x="35" y="5"  width="30" height="10"/>
+					<!-- <rect x="85" y="35" width="10" height="30"/> -->
+					<!-- <rect x="35" y="85" width="30" height="10"/> -->
 				</g>
 			</g>
 
-			<g id="centerCircle">
+			<g id="centerCircle" stroke-dasharray=".3">
 				<circle cx="32" cy="50" r="12"/>
 				<circle cx="44" cy="50" r="12"/>
 				<circle cx="56" cy="50" r="12"/>
@@ -65,7 +65,7 @@
 				<line x1="100" y1="0" x2="0" y2="100"/>
 			</g>
 
-			<g id="sizeOfCircle" stroke-dasharray="0">
+			<g id="sizeOfCircle" stroke-dasharray=".1">
 				<circle cx="20" cy="50" r="15"/>
 				<circle cx="50" cy="50" r="15"/>
 				<circle cx="80" cy="50" r="15"/>
@@ -74,18 +74,95 @@
 				<circle cx="50" cy="80" r="15"/>
 			</g>
 
+			<g id="centerFiveCircle" stroke-dasharray="1">
+				<circle cx="26" cy="50" r="6"/>
+				<circle cx="38" cy="50" r="6"/>
+				<circle cx="50" cy="50" r="6"/>
+				<circle cx="62" cy="50" r="6"/>
+				<circle cx="74" cy="50" r="6"/>
+			</g>
+
+			<g id="curveCenterWeight" fill="transparent" stroke="#aaa" stroke-dasharray="0">
+				
+				<g fill="#999" stroke-width="0">
+					<circle cx="5" cy="35" r=".5"/>
+					<circle cx="5" cy="45" r=".8"/>
+					<circle cx="10" cy="50" r=".5"/>
+				</g>
+				
+				
+				<path d="M5,5 C5,5 2,20 5,35"/><text x="2.5" y="20" class="sz">30</text>
+				<path d="M5,35 C5,35 2.5,40 5,45"/><text x="2.5" y="40" class="sz">10</text>
+				<path d="M5,45 C5,45 2.5,47.5 5,50"/><text x="2.5" y="47.5" class="sz">5</text>
+
+				<!-- <path d="M0,62 H5" fill="transparent"/><text x="2.5" y="62" class="sz">5</text> -->
+				<path d="M0,62 C0,62 2.5,60 5,62"/><text x="2.5" y="60.5" class="sz">5</text>
+
+				<path d="M5,65 H10" fill="transparent"/><text x="7.5" y="65" class="sz">5</text>
+				<path d="M5,68 H15" fill="transparent"/><text x="10" y="68" class="sz">10</text>
+				<path d="M0,71 H20" fill="transparent"/><text x="10" y="71" class="sz">20</text>
+
+				<path d="M80,71 H100" fill="transparent"/><text x="90" y="71" class="sz">20</text>
+
+				<path d="M68,38 V62" fill="transparent"/><text x="68" y="44" class="sz">24</text>
+				<path d="M74,44 V56" fill="transparent"/><text x="74" y="48" class="sz">12</text>
+				<path d="M80,35 V65" fill="transparent"/><text x="80" y="40" class="sz">30</text>
+				<path d="M85,45 V55" fill="transparent"/><text x="85" y="50" class="sz">10</text>
+				<path d="M90,40 V60" fill="transparent"/><text x="90" y="48" class="sz">20</text>
+			</g>
+
+
+			<g fill="transparent" stroke="#aaa" stroke-dasharray="0">
+				
+				<path d="M10,40 V60" fill="transparent"/><text x="10" y="48" class="sz">20</text>
+				<path d="M15,45 V55" fill="transparent"/><text x="15" y="50" class="sz">10</text>
+				<path d="M20,35 V65" fill="transparent"/><text x="20" y="40" class="sz">30</text>
+
+				<path d="M26,44 V56"/><text x="26" y="48" class="sz">12</text>
+				
+				<path d="M32,38 V62"/><text x="32" y="45" class="sz">24</text>
+
+				<path d="M50,20 C50,20 60,50 50,80"/><text x="54" y="30" class="sz">60</text>
+
+
+
+				<path d="M32,50 C32,50 50,45 68,50"/><text x="50" y="47" class="sz">36</text>
+
+				
+
+				<path d="M10,87 H90"/><text x="37" y="87" class="sz">80</text>
+
+				<path d="M5,90 H95"/><text x="37" y="90" class="sz">90</text>
+
+				<path d="M0,0 C0,0 50,5 100,0"/><text x="50" y="2.5" class="sz">100</text>
+
+				<path d="M95,95 C95,95 94,97.5 95,100"/><text x="94" y="97.5" class="sz">5</text>
+				<path d="M95,95 C95,95 97.5,94 100,95"/><text x="97.5" y="94" class="sz">5</text>
+
+			</g>
+
 			<use href="#circly" x="45" y="5"/>
+			<use href="#circly" x="5"  y="45"/>
 			<use href="#circly" x="45" y="85"/>
 			<use href="#circly" x="85" y="45"/>
-			<use href="#circly" x="5"  y="45"/>			
 		</g>
+
+		<g>
+			<text x="50" y="98" class="big" >DSYiM-v52 by Gon Y. Yi (Jan 4 2023)</text>
+		</g>
+		
 	</svg>
 
-	<style>text{font-size: 8px;}</style>
-	<g fill="white" stroke="white">
-		<text x="15" y="485">DSYiM-v52 by Gon Y. Yi (Jan 4 2023)</text>		
-	</g>
-
+	<!-- DSYiM --> 
+	<svg id="DSYiM" xmlns="http://www.w3.org/2000/svg" version="1.1" x="25" y="25" height="450" width="450" 
+		fill="transparent" stroke="yellow" stroke-width=".3" viewBox="0 0 100 100">
+		<g id="dsyim">
+			<title>DSYiM-v52</title><desc>(c) 2023 Gon Yi</desc>
+			<path id="map-v51" d="M5,5 V35 C5,35 05,45 10,50 C10,50 05,55 5,65 V95 H35 C35,95 45,95 50,90 C50,90 55,95 65,95 H95 V65 C95,65 95,55 90,50 C90,50 95,45 95,35 V5 H65 C65,5 55,5 50,10 C50,10 45,5 35,5 H5Z"/>
+			<circle id="shield" cx="50" cy="50" r="30"/>
+			<path id="yi" d="M32,50H68 M44,38V62 M56,38V62"/>
+		</g>
+	</svg>
+	
 
 </svg>
-
