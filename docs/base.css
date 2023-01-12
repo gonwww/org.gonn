@@ -35,7 +35,7 @@ a:hover, a:focus {color:#f60;}
 
 .logo {stroke: white; stroke-width: 5; fill: red; 
     background: red; height: 7rem; width: 7rem; padding: 5rem 1rem 1rem 1rem;}
-.logo:hover {background: linear-gradient(yellow,red);}
+/* .logo:hover {background: linear-gradient(yellow,red);} */
 .hide   {display: none;}
 
 /* =============== FORM =============== */
