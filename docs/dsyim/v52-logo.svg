@@ -1,10 +1,80 @@
-<svg class="logo" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 100 100"
-	height="50" width="50" fill="transparent" stroke="#fff" stroke-width="5" 
-    >
+<svg class="logo" xmlns="http://www.w3.org/2000/svg" version="1.1" 
+	viewBox="0 0 100 100" height="50" width="50" stroke-width="5">
+	<!-- viewBox="0 0 500 500" height="500" width="500" stroke-width="5"> -->
+
 	<title>DSYiM</title><desc>DSYiM-v52 (c) Gon Y. Yi</desc>
-	<g id="dsyim">
-	    <path id="map" d="M5,5V35 C5,35 05,45 10,50 C10,50 05,55 5,65 V95H35 C35,95 45,95 50,90 C50,90 55,95 65,95 H95V65 C95,65 95,55 90,50 C90,50 95,45 95,35 V5H65 C65,5 55,5 50,10 C50,10 45,5 35,5 H5Z"/>
-		<circle id="shield" cx="50" cy="50" r="30"/>
-		<path id="yi" d="M32,50H68 M44,38V62 M56,38V62"/>
+	<refs>
+		<g id="dsyim">
+		    <path id="map" d="M5,5V35 C5,35 05,45 10,50 C10,50 05,55 5,65 V95H35 C35,95 45,95 50,90 C50,90 55,95 65,95 H95V65 C95,65 95,55 90,50 C90,50 95,45 95,35 V5H65 C65,5 55,5 50,10 C50,10 45,5 35,5 H5Z"/>
+			<circle id="shield" cx="50" cy="50" r="30"/>
+			<path id="yi" d="M32,50H68 M44,38V62 M56,38V62"/>
+		</g>
+	</refs>
+
+	<g fill="black">
+		<use href="#dsyim" x="0"   y="0" stroke="#999"/>
+		<use href="#dsyim" x="100" y="0" stroke="white"/>	
+		<use href="#dsyim" x="200" y="0" stroke="#ccc" />
+		<use href="#dsyim" x="300" y="0" stroke="red"/>
+		<use href="#dsyim" x="400" y="0" stroke="yellow"/>
 	</g>
+	<g fill="gray">
+		<use href="#dsyim" x="0"   y="100" stroke="black"/>
+		<use href="#dsyim" x="100" y="100" stroke="white"/>	
+		<use href="#dsyim" x="200" y="100" stroke="#ccc" />
+		<use href="#dsyim" x="300" y="100" stroke="red"/>
+		<use href="#dsyim" x="400" y="100" stroke="yellow"/>
+	</g>
+	<g fill="white">
+		<use href="#dsyim" x="0"   y="200" stroke="black"/>
+		<use href="#dsyim" x="100" y="200" stroke="#ccc"/>	
+		<use href="#dsyim" x="200" y="200" stroke="#999" />
+		<use href="#dsyim" x="300" y="200" stroke="red"/>
+		<use href="#dsyim" x="400" y="200" stroke="yellow"/>
+	</g>
+	<g fill="blue">
+		<use href="#dsyim" x="0"   y="300" stroke="black"/>
+		<use href="#dsyim" x="100" y="300" stroke="white"/>	
+		<use href="#dsyim" x="200" y="300" stroke="#ccc" />
+		<use href="#dsyim" x="300" y="300" stroke="red"/>
+		<use href="#dsyim" x="400" y="300" stroke="yellow"/>
+	</g>
+	<g fill="transparent">
+		<use href="#dsyim" x="0"   y="400" stroke="black"/>
+		<use href="#dsyim" x="100" y="400" stroke="white"/>	
+		<use href="#dsyim" x="200" y="400" stroke="#999" />
+		<use href="#dsyim" x="300" y="400" stroke="red"/>
+		<use href="#dsyim" x="400" y="400" stroke="yellow"/>
+	</g>
+
+	<view id="black-black"  viewBox="0   0 100 100"/>
+	<view id="black-white"  viewBox="100 0 100 100"/>
+	<view id="black-gray"   viewBox="200 0 100 100"/>
+	<view id="black-red"    viewBox="300 0 100 100"/>
+	<view id="black-yellow" viewBox="400 0 100 100"/>
+		
+	<view id="gray-black"   viewBox="0   100 100 100"/>
+	<view id="gray-white"   viewBox="100 100 100 100"/>
+	<view id="gray-gray"    viewBox="200 100 100 100"/>
+	<view id="gray-red"     viewBox="300 100 100 100"/>
+	<view id="gray-yellow"  viewBox="400 100 100 100"/>
+
+	<view id="white-black"  viewBox="0   200 100 100"/>
+	<view id="white-white"  viewBox="100 200 100 100"/>
+	<view id="white-gray"   viewBox="200 200 100 100"/>
+	<view id="white-red"    viewBox="300 200 100 100"/>
+	<view id="white-yellow" viewBox="400 200 100 100"/>	
+
+	<view id="blue-black"   viewBox="0   300 100 100"/>
+	<view id="blue-white"   viewBox="100 300 100 100"/>
+	<view id="blue-gray"    viewBox="200 300 100 100"/>
+	<view id="blue-red"     viewBox="300 300 100 100"/>
+	<view id="blue-yellow"  viewBox="400 300 100 100"/>	
+	
+	<view id="trans-black"  viewBox="0   400 100 100"/>
+	<view id="trans-white"  viewBox="100 400 100 100"/>
+	<view id="trans-gray"   viewBox="200 400 100 100"/>
+	<view id="trans-red"    viewBox="300 400 100 100"/>
+	<view id="trans-yellow" viewBox="400 400 100 100"/>		
+	
 </svg>
