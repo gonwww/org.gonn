@@ -1,43 +1,59 @@
 <svg id="dsyim-svg" class="logo" xmlns="http://www.w3.org/2000/svg" version="1.1" 
 	viewBox="0 0 100 100" width="50" height="50" stroke-width="5">
-	<!-- viewBox="0 0 500 500" height="500" width="500" stroke-width="5"> -->
-
 	<title>DSYiM-v52c</title>
 	<desc>v52 Customizable Version (c) Gon Y. Yi</desc>
-
 	<g id="dsyim" x="0" y="0" fill="#777" stroke="#fff">
-	    <path id="map" d="M5,5V35 C5,35 05,45 10,50 C10,50 05,55 5,65 V95H35 C35,95 45,95 50,90 C50,90 55,95 65,95 H95V65 C95,65 95,55 90,50 C90,50 95,45 95,35 V5H65 C65,5 55,5 50,10 C50,10 45,5 35,5 H5Z"/>
+		<path id="map" d="M5,5V35 C5,35 05,45 10,50 C10,50 05,55 5,65 V95H35 C35,95 45,95 50,90 C50,90 55,95 65,95 H95V65 C95,65 95,55 90,50 C90,50 95,45 95,35 V5H65 C65,5 55,5 50,10 C50,10 45,5 35,5 H5Z"/>
 		<circle id="shield" cx="50" cy="50" r="30"/>
 		<path id="yi" d="M32,50H68 M44,38V62 M56,38V62"/>
 	</g>
 
 	<script type="text/javascript"><![CDATA[
-		// e.g. <dsyim.svg#size=500,color=red,line=gray,lineWidth=3>
-		const url = new URL(document.URL);
-		const vals = {};
-		if(url.hash != "") {
-			// skip first char(="#"), and split by comma(=","); replace url encoded #(%23) to #.
-			let tmp = url.hash.substr(1).replace("%23","#").split(","); 
-
-			for(x in tmp) {
-				// max item = 2 (eg. "gon,is,here".split(",",2) -> ["gon", "is"])
-				let tmp2 = tmp[x].split("="); 
-				if(tmp2.length>1) { vals[tmp2[0].trim()] = tmp2[1].trim(); }
+	class GonModifier {
+		filter(url) {
+			let idx1 = url.indexOf("?"),  idx2 = url.indexOf("#");
+			let idx = (idx1 < 0) ? idx2 : (idx2 < 0) ? idx1 : (idx1 < idx2) ? idx1 : idx2; // find lowest not -1.
+			return url.substring(idx + 1);
+		}
+		modSVG(id, param, item) {
+			if (this.vals[param] != null && this.vals[param].length > 0)
+				document.getElementById(id)
+					.setAttributeNS(null, item, this.vals[param]);
+		}
+		modDOM(id, param, item) {
+			if (this.vals[param] != null && this.vals[param].length > 0)
+				document.getElementById(id)
+					.setAttribute(item, this.vals[param]);
+		}
+		set(url) {
+			this.vals = {};
+			let url2 = this.filter(url);
+			let tmp = url2.replace("%23", "#")
+				.replace("%26", "&")
+				.replace("%3D", "=")
+				.replace("%3F", "?")
+				.split("&");
+			
+			for (let i in tmp) {
+				let tmp2 = tmp[i].split("=");
+				if (tmp2.length > 1) {
+					this.vals[tmp2[0].trim()] = tmp2[1].trim();
+				}
 			}
 		}
+		constructor(url) {
+			this.set(url);
+		}
+	}
 
-		const modSvg2 = (id, param, item) => {
-			if(vals[param] != null && vals[param].length > 0) 
-				document.getElementById(id).setAttributeNS(null, item, vals[param]); }
-		const modDom2 = (id, param, item) => {
-			if(vals[param] != null && vals[param].length > 0) 
-					document.getElementById(id).setAttribute(item, vals[param]); }
-		
-		modDom2("dsyim-svg", "size", "width");
-		modDom2("dsyim-svg", "size", "height");
-		modSvg2("dsyim", "fill", "fill");
-		modSvg2("dsyim", "stroke", "stroke");
-		modSvg2("dsyim", "stroke-width", "stroke-width");		
+	// e.g. <dsyim.svg#size=500&color=red&line=gray&lineWidth=3>
+	// e.g. <dsyim.svg?size=500&color=red&line=gray&lineWidth=3>
 
+	let tmp = new GonModifier(document.URL);
+	tmp.modDOM("dsyim-svg", "size", "width");
+	tmp.modDOM("dsyim-svg", "size", "height");
+	tmp.modSVG("dsyim", "fill", "fill");
+	tmp.modSVG("dsyim", "stroke", "stroke");
+	tmp.modSVG("dsyim", "stroke-width", "stroke-width");
 	]]></script>
 </svg>
