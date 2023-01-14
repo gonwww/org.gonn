@@ -40,25 +40,7 @@
 		constructor(url) {
 			this.set(url);
 		}
-		save() {
-			let rmJS = (id, tag) => {
-				let fr = document.getElementById(id);
-				let c = fr.getElementsByTagName(tag);
-				if(c.length>0) fr.removeChild(c[0]);
-				c = document.getElementById("dsyim");
-				c.removeAttribute("onclick");
-			}
-			rmJS("dsyim-svg", "script");
-			let pg = document.documentElement.outerHTML;
-		  	let pg_b = new Blob([pg], {type: "image/svg+xml"});
-			let data = window.URL.createObjectURL(pg_b);
-			window.location = data;
-			window.URL.revokeObjectURL(data);
-		}
 	}
-
-	let c = document.getElementById("dsyim");
-	c.setAttribute("onclick", "gonl.save();");
 
 	let gonl = new GonModifier(document.URL);
 	gonl.modDOM("dsyim-svg", "size", "width");
@@ -66,6 +48,13 @@
 	gonl.modSVG("dsyim", "fill", "fill");
 	gonl.modSVG("dsyim", "stroke", "stroke");
 	gonl.modSVG("dsyim", "stroke-width", "stroke-width");
+
+	let rmJS = (id, tag) => {
+		let fr = document.getElementById(id);
+		let c = fr.getElementsByTagName(tag);
+		if(c.length>0) fr.removeChild(c[0]);
+	}
+	rmJS("dsyim-svg", "script");
 
 	// TODO 1. Only clickable when svg file is called directly
 	// TODO 2. When click, create a new HTML doc with blob, and have a download link in it.
