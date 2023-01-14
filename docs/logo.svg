@@ -2,13 +2,11 @@
 	viewBox="0 0 100 100" width="50" height="50" stroke-width="4">
 	<title>DSYiM-v52c</title>
 	<desc>v52 Customizable (c) Gon Y. Yi</desc>
-	<g id="dsyim" fill="#333" stroke="#ddd">
+	<g id="dsyim" fill="#333" stroke="#ddd" onclick="gonl.save();">
 		<path id="map" d="M5,5V35 C5,35 05,45 10,50 C10,50 05,55 5,65 V95H35 C35,95 45,95 50,90 C50,90 55,95 65,95 H95V65 C95,65 95,55 90,50 C90,50 95,45 95,35 V5H65 C65,5 55,5 50,10 C50,10 45,5 35,5 H5Z"/>
 		<circle id="shield" cx="50" cy="50" r="30"/>
 		<path id="yi" d="M32,50H68 M44,38V62 M56,38V62"/>
-	</g>
-	
-	<script type="text/javascript"><![CDATA[
+	</g><script type="text/javascript"><![CDATA[
 	class GonModifier {
 		filter(url) {
 			let idx1 = url.indexOf("?"), idx2 = url.indexOf("#");
@@ -41,13 +39,25 @@
 		constructor(url) {
 			this.set(url);
 		}
+		save() {
+			let rmJS = (id, tag) => {
+				let fr = document.getElementById(id);
+				let c = fr.getElementsByTagName(tag);
+				if(c.length>0) fr.removeChild(c[0]);
+			}
+			rmJS("dsyim-svg", "script");
+			let pg = document.documentElement.outerHTML;
+		  	let pg_b = new Blob([pg], {type: "image/svg+xml"});
+			let data = window.URL.createObjectURL(pg_b);
+			window.location = data;
+		}
 	}
 
-	let tmp = new GonModifier(document.URL);
-	tmp.modDOM("dsyim-svg", "size", "width");
-	tmp.modDOM("dsyim-svg", "size", "height");
-	tmp.modSVG("dsyim", "fill", "fill");
-	tmp.modSVG("dsyim", "stroke", "stroke");
-	tmp.modSVG("dsyim", "stroke-width", "stroke-width");
-	]]></script>
+	let gonl = new GonModifier(document.URL);
+	gonl.modDOM("dsyim-svg", "size", "width");
+	gonl.modDOM("dsyim-svg", "size", "height");
+	gonl.modSVG("dsyim", "fill", "fill");
+	gonl.modSVG("dsyim", "stroke", "stroke");
+	gonl.modSVG("dsyim", "stroke-width", "stroke-width");  
+]]></script>
 </svg>
