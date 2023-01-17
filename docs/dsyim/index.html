@@ -38,8 +38,7 @@
 		filter = (url) => {
 			let idx1 = url.indexOf("?"), idx2 = url.indexOf("#");
 			let idx = (idx1<0)? idx2 : (idx2<0)? idx1 : (idx1<idx2)? idx1 : idx2;
-			if(idx<0) return url;
-			return "https://gonn.org/dsyim/v52-logo.svg" + url.substring(idx);
+			return idx;
 		}
         let additionalURI = filter(document.URL);
         // console.log("New image path: "+additionalURI);
@@ -47,7 +46,13 @@
         updateLogo = (elmID) => {
             let elm = document.getElementById(elmID);
             if(elm != undefined) {
-                elm.data = filter(document.URL);
+                // if URL has no "?#", skip
+                if(filter(document.URL) < 0) {
+                    return false;
+                }
+                elm.data = elm.data.substring(0, filter(elm.data)) + document.URL.substring(filter(document.URL));
+                console.log("1:", elm.data.substring(0, filter(elm.data)));
+                console.log("2:", document.URL.substring(filter(document.URL)));
                 return true;
             }
             return false; 
