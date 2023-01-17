@@ -42,6 +42,7 @@
 		}
 	}
 
+	// UPDATE THE LOGO
 	let gonl = new GonModifier(document.URL);
 	gonl.modDOM("dsyim-svg", "size", "width");
 	gonl.modDOM("dsyim-svg", "size", "height");
@@ -49,13 +50,11 @@
 	gonl.modSVG("dsyim", "stroke", "stroke");
 	gonl.modSVG("dsyim", "stroke-width", "stroke-width");
 
+	// REMOVE JAVASCRIPT
 	let rmJS = (id, tag) => {
 		let fr = document.getElementById(id);
 		let c = fr.getElementsByTagName(tag);
 		if(c.length>0) fr.removeChild(c[0]);
 	}
-	rmJS("dsyim-svg", "script");
-
-	// TODO 1. Only clickable when svg file is called directly
-	// TODO 2. When click, create a new HTML doc with blob, and have a download link in it.
+	rmJS("dsyim-svg", "script"); 	
 ]]></script></svg>
