@@ -38,7 +38,7 @@
 		filter = (url) => {
 			let idx1 = url.indexOf("?"), idx2 = url.indexOf("#");
 			let idx = (idx1<0)? idx2 : (idx2<0)? idx1 : (idx1<idx2)? idx1 : idx2;
-			if(idx<0) return "";
+			if(idx<0) return url;
 			return "https://gonn.org/dsyim/v52-logo.svg" + url.substring(idx);
 		}
         let additionalURI = filter(document.URL);
@@ -57,7 +57,7 @@
     </section>
     
     <section>
-        <h2>v52</h2>
+        <h2>v52</h2> 
         <a href="./v52-blueprint.svg"><img src="./v52-blueprint.svg" width="200px"/></a>
     </section>
         
