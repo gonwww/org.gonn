@@ -51,8 +51,6 @@
                     return false;
                 }
                 elm.data = elm.data.substring(0, filter(elm.data)) + document.URL.substring(filter(document.URL));
-                console.log("1:", elm.data.substring(0, filter(elm.data)));
-                console.log("2:", document.URL.substring(filter(document.URL)));
                 return true;
             }
             return false; 
