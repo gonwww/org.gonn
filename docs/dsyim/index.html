@@ -38,9 +38,21 @@
     
     <section>
         <h2>Customizable</h2>
-        <object data="https://gonn.org/dsyim/v52-logo.svg?size=200&fill=#abb&stroke=#333" type="image/svg+xml">
+        <object id="logo" data="https://gonn.org/dsyim/v52-logo.svg?size=200&fill=#abb&stroke=#333" type="image/svg+xml">
             <b>[DSYiM Logo]</b>
         </object>
+        
+        <script>
+		filter = (url) => {
+			let idx1 = url.indexOf("?"), idx2 = url.indexOf("#");
+			let idx = (idx1<0)? idx2 : (idx2<0)? idx1 : (idx1<idx2)? idx1 : idx2;
+			if(idx<0) return "";
+			return "https://gonn.org/dsyim/v52-logo.svg" + url.substring(idx);
+		}
+        let additionalURI = filter(document.URL);
+        console.log("New image path: "+additionalURI);
+        // "gonn.org/dsyim/?fill=red" --> calls customizable image with red fill
+        </script>        
     </section>
 
     <footer>&copy; 2022-2023 Gonn</footer>
