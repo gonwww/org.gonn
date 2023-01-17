@@ -48,7 +48,6 @@
 	gonl.modDOM("dsyim-svg", "size", "height");
 	gonl.modSVG("dsyim", "fill", "fill");
 	gonl.modSVG("dsyim", "stroke", "stroke");
-	gonl.modSVG("dsyim", "stroke-width", "stroke-width");
 
 	// REMOVE JAVASCRIPT
 	let rmJS = (id, tag) => {
