@@ -27,7 +27,7 @@
             <b>[DSYiM]</b>
         </object>
     </header>
-    
+     
     <section>
         <h1>v52</h2>
         <a href="./v52-blueprint.svg"><img src="./v52-blueprint.svg" width="200px"/></a>
@@ -52,8 +52,17 @@
 			return "https://gonn.org/dsyim/v52-logo.svg" + url.substring(idx);
 		}
         let additionalURI = filter(document.URL);
-        console.log("New image path: "+additionalURI);
+        // console.log("New image path: "+additionalURI);
         // "gonn.org/dsyim/?fill=red" --> calls customizable image with red fill
+        updateLogo = (elmID) => {
+            let elm = document.getElementById(elmID);
+            if(elm != undefined) {
+                elm.data = filter(document.URL);
+                return true;
+            }
+            return false; 
+        }
+        updateLogo("logo");
         </script>        
     </section>
 
