@@ -10,15 +10,15 @@ body { background:#fff; padding:0; margin:0;
     font-family:"Times","Times New Roman",serif,sans-serif;
     font-size: 3rem; color: #000;
     word-wrap:break-word; hyphens:auto; }
-    
-header, section, footer, aside {margin: 0 3rem; max-width: 200rem;}
-section, footer, aside {padding: 0 0 3rem 0;}
-
-header {padding-bottom: 0;}
-footer {padding: 2rem 0; border-top: 1px solid #555; font-size:3rem;}
-
-h1, h2, h3, h4, h5 {
-    margin: 0; padding: 3rem 0 1rem 0; color:#555; font-size:4rem; font-weight:400;}
+            
+section, footer, aside, h1, h2, h3, h4 {
+    padding: 2rem 0; margin: 0 3rem; max-width: 200rem;
+}
+        
+header {margin: 0 3rem; padding-bottom: 0; max-width: 200rem; }
+footer {margin-top: 2rem; padding: 1rem 0; border-top: 1px solid #555; font-size:3rem;}
+        
+h1, h2, h3, h4, h5 {color:#555; font-size:4rem; font-weight:400;}
 h1 {font-size: 7rem; font-weight:600;}
 h2 {font-size: 5rem;} 
 h3 {font-size: 4rem;}
@@ -26,17 +26,13 @@ hr {border-top: 1px solid #555; border-width:0; height:0; margin-top: 3rem;}
 p  {padding: 1rem 0rem;}
 pre {display:block; color:#555; background-color:#eee; 
     padding:1rem; white-space:pre-wrap;}
-kbd {font-size: 2rem; border: 1px solid #999; background-color: #ddd; 
-    border-radius: 1rem; padding: .2rem;}
-
 a {text-decoration:none; color:#357; padding:0; outline:none;}
 a:active {color:#f51;} 
 a:hover, a:focus {color:#f60;}
 
-.logo {stroke: white; stroke-width: 5; fill: red; 
-    background: red; height: 7rem; width: 7rem; padding: 5rem 1rem 1rem 1rem;}
-/* .logo:hover {background: linear-gradient(yellow,red);} */
-.hide   {display: none;}
+.logo {stroke: white; stroke-width: 5; fill: red; background: red; height: 7rem; width: 7rem; padding: 5rem 1rem 1rem 1rem;}
+.logo:hover {background: linear-gradient(yellow,red);}
+
 
 /* =============== FORM =============== */
 
