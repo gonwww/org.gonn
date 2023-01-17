@@ -33,23 +33,20 @@
     
 <body>
     <header>
-        <object class="logo" data="https://gonn.org/dsyim-bg.svg" type="image/svg+xml" width="50px" height="50px">
+        <object class="logo" data="https://gonn.org/dsyim-bg.svg" type="image/svg+xml">
             <b>[DSYiM]</b>
         </object>
     </header>
 
     <h1>Encryption</h1>
     <section>        
-        <div>
-            For AES-256-CBC (MD5)
+        For AES-256-CBC (MD5)
 
-            <textarea id="data" class="block" rows="5" style="width:80rem;max-width:100%;" placeholder="Encrypted or plain text" autocomplete="one-time-code" onclick="this.select();"></textarea>
-            <input type="password" id="key" class="block" style="width:80rem;max-width:100%;" placeholder="Secret key" autocomplete="one-time-code" onclick="this.select();">
+        <textarea id="data" class="block" rows="5" style="width:80rem;max-width:100%;" placeholder="Encrypted or plain text" autocomplete="one-time-code" onclick="this.select();"></textarea>
+        <input type="password" id="key" class="block" style="width:80rem;max-width:100%;" placeholder="Secret key" autocomplete="one-time-code" onclick="this.select();">
 
-            <button id="btnEnc">Encrypt</button>
-            <button id="btnDec">Decrypt</button>
-            
-        </div>
+        <button id="btnEnc">Encrypt</button>
+        <button id="btnDec">Decrypt</button>
     </section> 
 
     <script>
@@ -78,7 +75,7 @@
         -->
     </script>
     <footer>
-        Last modified: <script>document.write(document.lastModified);</script><br/>
+        Last modified: <script>document.write(document.lastModified);</script><br>
         &copy; 2022-2023 Gonn
     </footer>
 </body>
