@@ -11,13 +11,14 @@
 - v1.0.7
     - 1/18/2022, Able to download DSYiM created in https://gonn.org/dsyim/ 
         eg. https://gonn.org/dsyim/#size=250&fill=red&stroke=white
-
+- v1.0.8
+    - 1/18/2022, cleaned up.
 
 ## Todo
 
 - [X] G100 -- Make it a structural outline -- instead of `section/h2` for title, 
     use `h1`, so it can be structured.
-- [ ] G101 -- Except for the main entry point (/), separate CSS and SVG into separate
+- [X] G101 -- Except for the main entry point (/), separate CSS and SVG into separate
     files.
 - [X] G102 -- Change the color on `/enc` page to have more contrast.
 - [X] G103 -- Recreated DSYiM from the scratch. (1/4/2023, v52)
