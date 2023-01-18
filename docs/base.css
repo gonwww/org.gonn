@@ -28,7 +28,7 @@ p  {padding: 1rem 0rem;}
 a {text-decoration:none; color:#357; padding:0; outline:none;}
 a:active {color:#f51;} 
 a:hover, a:focus {color:#f60;}
-pre {display: #000; color: #555; background-color: #eee; padding: 1rem; white-space: pre-wrap;}
+pre {display: block; color: #555; background-color: #eee; padding: 1rem; white-space: pre-wrap;}
 .logo {stroke: white; fill: red; background: red; height: 7rem; width: 7rem; padding: 5rem 1rem 1rem 1rem;}
 .logo:hover {background: linear-gradient(yellow,red);}
 
