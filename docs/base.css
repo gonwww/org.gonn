@@ -12,24 +12,23 @@ body { background:#fff; padding:0; margin:0;
     word-wrap:break-word; hyphens:auto; }
     
 section, footer, aside, div, h1 {
-    padding: 0rem 0; margin: 0rem 3rem; max-width: 200rem;
+    padding: 0; margin: 0 0 3rem 3rem; max-width: 200rem;
 }
 
 header {margin: 0 3rem; padding-bottom: 0; max-width: 200rem; }
 footer {margin-top: 2rem; padding: 1rem 0; border-top: 1px solid #555; font-size:3rem;}
 
-h2, h3, h4, h5 {color:#555; font-size:4rem; padding-bottom: 0rem; margin:2rem 0rem;}
-h1 {font-size: 7rem; font-weight:600; color:#555; margin-bottom:2rem; margin-top:2rem;}
-h2 {font-size: 5rem; font-weight:400;} 
-h3 {font-size: 4rem; font-weight:400;}
+h1 {color:#555; font-size: 7rem; font-weight:600; margin: 2rem 3rem;}
+h2, h3, h4, h5 {color:#555; padding-bottom: 0rem; margin:2rem 0rem; font-weight:400;}
+h3, h4, h5 {font-size: 4rem;}
+h2 {font-size: 5rem;} 
+
 hr {border-top: 1px solid #555; border-width:0; height:0; margin-top: 3rem;}
 p  {padding: 1rem 0rem;}
-pre {display:block; color:#555; background-color:#eee; 
-    padding:1rem; white-space:pre-wrap;}
 a {text-decoration:none; color:#357; padding:0; outline:none;}
 a:active {color:#f51;} 
 a:hover, a:focus {color:#f60;}
-
+pre {display: #000; color: #555; background-color: #eee; padding: 1rem; white-space: pre-wrap;}
 .logo {stroke: white; fill: red; background: red; height: 7rem; width: 7rem; padding: 5rem 1rem 1rem 1rem;}
 .logo:hover {background: linear-gradient(yellow,red);}
 

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Copyright (c) 2022-2023 Gon Y. Yi -->
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0">
+    <meta name="theme-color" content="#db8">
+    <meta name="robots" content="noindex,nofollow">
+    <meta name="author" content="Gon Y. Yi">
+    <meta name="description" content="DSYiM Samples">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://gonn.org">
+    <meta property="og:site_name" content="Gonn">
+    <meta property="og:title" content="DSYiM Samples">
+    <link rel="icon" type="image/svg+xml" href="https://gonn.org/favicon.svg">
+    <link rel="alternate icon" type="image/png" href="https://gonn.org/favicon.png">
+    <link rel="alternate icon" href="https://gonn.org/favicon.ico">
+    <link rel="apple-touch-icon" href="https://gonn.org/favicon.png" sizes="any">
+    <link rel="stylesheet" type="text/css" href="https://gonn.org/base.css">
+    <title>DSYiM - Gonn</title>
+    
+    <style><!--
+        #logo {width:100px; height:100px;}
+    --></style>
+</head>
+
+<body>
+    <header onclick="location.href='https://gonn.org/';">
+        <object class="logo" data="https://gonn.org/dsyim-bg.svg" type="image/svg+xml">
+            <b>[++]</b>
+        </object>
+    </header>
+
+    <h1>Logo</h1>
+    <div>
+        DSYiM-v52 example: 
+        <i><a href="https://gonn.org/logo.svg#size=250&fill=red&stroke=#ddd">
+            https://gonn.org/logo.svg#size=250&fill=red&stroke=#ddd
+        </a></i>
+    </div>
+
+    <section onclick="downloadObject('logo', 'gonn-logo-customized.svg');">
+        <h2>DSYiM-v52</h2>
+        <div>
+            <object id="logo" data="https://gonn.org/logo.svg#size=200&fill=transparent&stroke=gray" type="image/svg+xml">
+                <b>[DSYiM Logo]</b>
+            </object>
+        </div>
+        <div>
+            <button>Download</button>
+        </div>
+    </section>
+    
+    <section>
+        <h2>Blueprint</h2>
+        <div>
+            <a href="./v52-blueprint.svg">
+                <img src="./v52-blueprint.svg" alt="DSYiM Blueprint" width="100" height="100">
+             </a>
+        </div>
+    </section>
+        
+    <section>
+        <h2>Variations</h2>
+        <div>
+            <a href="./v52-variations.svg">
+                <img src="./v52-variations.svg" alt="DSYiM Variations" width="100" height="100">
+            </a>
+        </div>
+    </section>    
+
+    <footer>
+        &copy; 2022-2023 Gonn
+    </footer>
+
+    <script><!--
+		filter = (url) => {
+			let idx1 = url.indexOf("?"), idx2 = url.indexOf("#");
+			let idx = (idx1<0)? idx2 : (idx2<0)? idx1 : (idx1<idx2)? idx1 : idx2;
+			return idx;
+		}
+        let additionalURI = filter(document.URL);
+        // console.log("New image path: "+additionalURI);
+        // "gonn.org/dsyim/?fill=red" --> calls customizable image with red fill
+        updateLogo = (elmID) => {
+            let elm = document.getElementById(elmID);
+            if(elm != undefined) {
+                // if URL has no "?#", skip
+                if(filter(document.URL) < 0) {
+                    return false;
+                }
+                elm.data = elm.data.substring(0, filter(elm.data)) + document.URL.substring(filter(document.URL));
+                return true;
+            }
+            return false; 
+        }
+        updateLogo("logo");
+
+        function blobToDataURL(blob, callback) {
+            var a = new FileReader();
+            a.onload = function(e) {callback(e.target.result);}
+            a.readAsDataURL(blob);
+        }
+
+        function saveAs(uri, filename) {
+          var link = document.createElement('a');
+          if (typeof link.download === 'string') {
+            link.href = uri;
+            link.download = filename;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+          } else {
+            window.open(uri);
+          }
+        }
+
+        function downloadObject(objID, filename) {
+            t = document.getElementById(objID)
+            if(t == null) return false;
+            t2 = t.contentDocument;
+            if(t2 == null) return false;
+            t3 = t2.documentElement
+            if(t3 == null) return false;
+            t4 = new XMLSerializer().serializeToString(t3)
+            t5 = new Blob([t4],{type: "image/svg+xml;charset=utf-8"})
+            
+            blobToDataURL(t5, function(dataurl){
+                saveAs(dataurl, filename)
+            });
+        }        
+    --></script>     
+</body>
+</html>
