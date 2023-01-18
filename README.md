@@ -4,7 +4,7 @@
 
 - v1.0.0
     - 1/3/2022, Updated DSYiM to version v51. DSYiM v51 has simpler "Y" (similar to `++`) 
-        and text representation will be `>(++)<` or simply `(++)`. It is modified "Yo" 
+        and text representation will be `[++]`. It is modified "Yo" 
         character to make it symmetry vertically and horizontally.
         - Also, PNG and ICO have been updated accordingly.
         - Added meta description tags.
