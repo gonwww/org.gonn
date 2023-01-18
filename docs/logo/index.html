@@ -19,10 +19,6 @@
     <link rel="apple-touch-icon" href="https://gonn.org/favicon.png" sizes="any">
     <link rel="stylesheet" type="text/css" href="https://gonn.org/base.css">
     <title>DSYiM - Gonn</title>
-    
-    <style><!--
-        #logo {width:100px; height:100px;}
-    --></style>
 </head>
 
 <body>
@@ -43,11 +39,11 @@
     <section>
         <h2>v52-c1</h2>
         <div>
-            <object id="logo" data="https://gonn.org/logo.svg#size=200&fill=transparent&stroke=gray" type="image/svg+xml">
+            <object id="logo" data="https://gonn.org/logo.svg#size=200&fill=transparent&stroke=gray" type="image/svg+xml" style="width:100px; height:100px;">
                 <b>[DSYiM Logo]</b>
             </object>
         </div>
-        <div>
+        <div> 
             <button onclick="downloadObject('logo', 'gonn-logo-customized.svg');">Download</button>
         </div>
     </section>
@@ -55,18 +51,20 @@
     <section>
         <h2>Blueprint</h2>
         <div>
-            <a href="./v52-blueprint.svg">
-                <img src="./v52-blueprint.svg" alt="DSYiM Blueprint" width="100" height="100">
-             </a>
+            <img src="./v52-blueprint.svg" alt="DSYiM Blueprint" width="100" height="100">
+        </div>
+        <div> 
+            <a class="btn" download="dsyim-v52-blueprint.svg" href="./v52-blueprint.svg">Download</a>
         </div>
     </section>
         
     <section>
         <h2>Variations</h2>
         <div>
-            <a href="./v52-variations.svg">
-                <img src="./v52-variations.svg" alt="DSYiM Variations" width="100" height="100">
-            </a>
+            <img src="./v52-variations.svg" alt="DSYiM Variations" width="100" height="100">
+        </div>
+        <div> 
+            <a class="btn" download="dsyim-v52-variations.svg" href="./v52-variations.svg">Download</a>
         </div>
     </section>    
 
@@ -96,6 +94,18 @@
             return false; 
         }
         updateLogo("logo");
+        
+        updateBgColor = (uri) => {
+            const seek = "background=";
+            let idx = uri.indexOf(seek);
+            if(idx < 0) return;
+            idx = idx + seek.length;
+            let end = uri.substring(idx).indexOf("&");
+            if(end < 0) end = uri.length;
+            document.body.style.background = uri.substring(idx, idx+end);
+            console.log(idx, end, uri.substring(idx, idx+end))
+        }
+        updateBgColor(document.URL);
 
         function blobToDataURL(blob, callback) {
             var a = new FileReader();
