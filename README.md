@@ -8,6 +8,9 @@
         character to make it symmetry vertically and horizontally.
         - Also, PNG and ICO have been updated accordingly.
         - Added meta description tags.
+- v1.0.7
+    - 1/18/2022, Able to download DSYiM created in https://gonn.org/dsyim/ 
+        eg. https://gonn.org/dsyim/#size=250&fill=red&stroke=white
 
 
 ## Todo
