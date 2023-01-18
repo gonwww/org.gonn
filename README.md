@@ -9,8 +9,10 @@
         - Also, PNG and ICO have been updated accordingly.
         - Added meta description tags.
 - v1.0.7
-    - 1/18/2022, Able to download DSYiM created in https://gonn.org/dsyim/ 
-        eg. https://gonn.org/dsyim/#size=250&fill=red&stroke=white
+    - 1/18/2022, Able to download DSYiM created in https://gonn.org/logo/
+        - eg. https://gonn.org/logo.svg#size=250&fill=red&stroke=white
+        - eg. https://gonn.org/logo.svg?size=250&fill=red&stroke=white
+        - eg. https://gonn.org/logo/
 - v1.0.8
     - 1/18/2022, cleaned up.
 
