@@ -13,8 +13,9 @@
         - eg. https://gonn.org/logo.svg#size=250&fill=red&stroke=white
         - eg. https://gonn.org/logo.svg?size=250&fill=red&stroke=white
         - eg. https://gonn.org/logo/
-- v1.0.8
-    - 1/18/2022, cleaned up.
+- v1.0.9
+    - 1/18/2022, now /logo/ can set background color of the page.
+
 
 ## Todo
 
