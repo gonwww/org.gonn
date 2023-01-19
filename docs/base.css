@@ -16,7 +16,7 @@ footer, aside, div, h1 {
 }
 
 header, section {margin: 0 3rem; padding-bottom: 0; max-width: 200rem; }
-footer {margin-top: 2rem; padding: 1rem 0; border-top: 1px solid #555; font-size:3rem;}
+footer {margin-top: 4rem; padding: 1rem 0; border-top: 1px solid #555; font-size:3rem;}
 
 h1 {color:#555; font-size: 7rem; font-weight:600; margin: 2rem 3rem;}
 h2, h3, h4, h5 {color:#555; padding-bottom: 0rem; margin: 4rem 0 1rem 0; font-weight:400;}
