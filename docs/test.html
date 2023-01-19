@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Copyright (c) 2022-2023 Gon Y. Yi -->
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0">
+    <meta name="theme-color" content="#db8">
+    <meta name="robots" content="noindex,nofollow">
+    <meta name="author" content="Gon Y. Yi">
+    <meta name="description" content="Gon Notes">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://gonn.org">
+    <meta property="og:site_name" content="Gonn">
+    <meta property="og:title" content="Gon Notes">
+    <link rel="icon" type="image/svg+xml" href="https://gonn.org/favicon.svg">
+    <link rel="alternate icon" type="image/png" href="https://gonn.org/favicon.png">
+    <link rel="alternate icon" href="https://gonn.org/favicon.ico">
+    <link rel="apple-touch-icon" href="https://gonn.org/favicon.png" sizes="any">
+    <title>Gonn</title>
+    <style>
+        <!--
+        /* =============== BASE =============== */
+        html { 
+            font-size:6px; 
+            padding:0; margin:0; } 
+
+        body { 
+            background:#fff;
+            font-family:"Times","Times New Roman",serif,sans-serif;
+            font-size: 3rem; color: #000;
+            word-wrap:break-word; overflow-wrap: break-word; hyphens: auto; 
+            display: block;
+            margin: 0 auto;
+            max-width: 600px;
+            min-width: 290px;
+            padding: 0 2.5rem 3rem 2.5rem;
+        }
+
+        footer, aside, div, h1 {
+            padding: 0; margin: 1rem 0rem;
+        }
+
+        header, section {
+            margin: 0;
+        }
+
+        section > div {
+            margin: 0;
+            border-left: .5rem #bbb solid;
+            padding: 0rem 0rem 1rem 2rem;
+        }
+
+        header {
+            border-bottom: 1rem #ddd solid;
+            padding: 0; margin: 0;
+            font-size: 0;
+        }
+    
+        header svg {
+            stroke: white; fill: red; background: red;
+            width: 7rem; height: 7rem; 
+            padding: 5rem 1rem 1rem 1rem;
+        }
+
+        header div {
+            display: inline-block;
+            background: red; color: white;
+            margin: 0;
+            height: 7rem; width: 7rem; 
+            text-align: center;
+            line-height: 7rem;
+            padding: 1rem;
+            font-size: 3rem;
+        }
+
+        header svg:hover { background: linear-gradient(yellow,red); }
+
+
+        footer {
+            margin-top: 4rem; 
+            border-top: 1rem solid #eee; font-size: 2.5rem;
+            padding: 1rem; 
+            text-align: left;
+        }
+        footer > div { margin: 0;}
+
+
+        h1 {color:#555; font-size: 7rem; font-weight:600; margin: 2rem 0rem;}
+        h2, h3, h4, h5 {color:#555; padding-bottom: 0rem; margin: 4rem 0 1rem 0; font-weight:400;}
+        h3, h4, h5 {font-size: 4rem;}
+        h2 {font-size: 5rem;} 
+
+        hr {border-top: 1px solid #555; border-width:0; height:0; margin-top: 3rem;}
+        p  {padding: 1rem 0rem;}
+        a  {text-decoration:none; color:#17f; padding:0; outline:none;}
+        a:active {color:#f51;} 
+        a:hover, a:focus {color:#f60;}
+        
+        pre {
+            display: block; color: #444; background-color: #eee; padding: 2rem; white-space: pre-wrap;
+            font-size: 2rem; border-radius: 1rem;
+        }
+        .highlight {
+            padding: 0 1rem; background-color: yellow; border-radius: .5rem;
+        }
+        .code {
+            font-family: monospace; font-size: 2.5rem;
+            padding: 0 1rem; background-color: #eee; border-radius: .5rem;   
+        }
+        -->
+    </style>
+</head>
+
+<body>
+    <header>
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 100 100"
+            	width="7rem" fill="#333" stroke="#ddd" onclick="location.href='https://gonn.org/';">
+        	<title>[++] Gonn</title><desc><div>[++]</div></desc>
+        	<g id="dsyim" stroke-width="4">
+    		    <path id="map" d="M5,5V35 C5,35 05,45 10,50 C10,50 05,55 5,65 V95H35 C35,95 45,95 50,90 C50,90 55,95 65,95 H95V65 C95,65 95,55 90,50 C90,50 95,45 95,35 V5H65 C65,5 55,5 50,10 C50,10 45,5 35,5 H5Z"/>
+        		<circle id="shield" cx="50" cy="50" r="30"/>
+        		<path id="yi" d="M32,50H68 M44,38V62 M56,38V62"/>
+        	</g>
+        </svg>        
+    </header>
+    
+
+    <h1>Hello</h1>
+    <div>    
+        This page intentionally left blank.
+    </div>
+
+    <section>
+        <h2>Hello another</h2>
+        <div>
+            Some other info!
+        </div>
+        <div>
+            Another, result of <span class="code">abc=def;</span><br>
+            test2
+            <pre>some pre stuff here there</pre>
+
+        </div>
+        <div>
+            blah
+            <a>some link</a> and some <span class="highlight">important thing</span>
+        </div>
+    </section>
+
+    <footer>
+        <div>
+            some other info
+        </div>
+        &copy; 2022-2023 Gonn
+    </footer>
+</body>
+</html>
