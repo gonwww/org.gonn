@@ -9,23 +9,23 @@ html { font-size:6px; padding:0; margin:0;}
 body { background:#fff; padding:0; margin:0;
     font-family:"Times","Times New Roman",serif,sans-serif;
     font-size: 3rem; color: #000;
-    word-wrap:break-word; hyphens:auto; }
+    word-wrap:break-word; overflow-wrap: break-word; hyphens: auto; }
     
-section, footer, aside, div, h1 {
-    padding: 0; margin: 0 0 3rem 3rem; max-width: 200rem;
+footer, aside, div, h1 {
+    padding: 0; margin: 1rem 3rem; max-width: 200rem;
 }
 
-header {margin: 0 3rem; padding-bottom: 0; max-width: 200rem; }
+header, section {margin: 0 3rem; padding-bottom: 0; max-width: 200rem; }
 footer {margin-top: 2rem; padding: 1rem 0; border-top: 1px solid #555; font-size:3rem;}
 
 h1 {color:#555; font-size: 7rem; font-weight:600; margin: 2rem 3rem;}
-h2, h3, h4, h5 {color:#555; padding-bottom: 0rem; margin:2rem 0rem; font-weight:400;}
+h2, h3, h4, h5 {color:#555; padding-bottom: 0rem; margin: 4rem 0 1rem 0; font-weight:400;}
 h3, h4, h5 {font-size: 4rem;}
 h2 {font-size: 5rem;} 
 
 hr {border-top: 1px solid #555; border-width:0; height:0; margin-top: 3rem;}
 p  {padding: 1rem 0rem;}
-a {text-decoration:none; color:#357; padding:0; outline:none;}
+a {text-decoration:none; color:#17f; padding:0; outline:none;}
 a:active {color:#f51;} 
 a:hover, a:focus {color:#f60;}
 pre {display: block; color: #555; background-color: #eee; padding: 1rem; white-space: pre-wrap;}
@@ -35,16 +35,16 @@ pre {display: block; color: #555; background-color: #eee; padding: 1rem; white-s
 
 /* =============== FORM =============== */
 
-label {font-size: 3rem; color: #ddd;}
+label {font-size: 2.5rem; color: #ddd;}
 .block {display: block; margin: 2rem 0;}
 .btn, button, input, textarea {
     margin:0;
-    border-radius: 1rem; border: .5rem solid #aaa;
-    font-size: 3rem; 
-    padding: 1rem; outline: none;
-    font-family: sans-serif;
+    border-radius: .5rem; border: .5rem solid #aaa;
+    font-size: 2.5rem; 
+    padding: .5rem; outline: none;
+    font-family:"Times","Times New Roman",serif,sans-serif;
 }
-.btn, button {background-color: #ddd; border-color: #ddd; color: #333; display: inline-block;}
+.btn, button {background-color: #ccc; border-color: #ccc; color: #222; display: inline-block;}
 .btn:hover, .btn:focus, .btn:active, button:hover, button:focus, button:active {
     border-color: #17f; background-color: #17f;color: #fff;}
 
