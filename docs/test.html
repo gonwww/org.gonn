@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Copyright (c) 2022-2023 Gon Y. Yi -->
+
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0">
     <meta name="theme-color" content="#db8">
@@ -17,97 +17,78 @@
     <link rel="alternate icon" type="image/png" href="https://gonn.org/favicon.png">
     <link rel="alternate icon" href="https://gonn.org/favicon.ico">
     <link rel="apple-touch-icon" href="https://gonn.org/favicon.png" sizes="any">
-    <title>Gonn</title>
+    <title>Test - Gon</title>
     <style>
         <!--
         /* =============== BASE =============== */
         html { 
-            font-size:6px; 
-            padding:0; margin:0; } 
+            font-size: 4px;
+            margin: 0;  padding: 0; 
+            display: block; } 
 
         body { 
-            background:#fff;
-            font-family:"Times","Times New Roman",serif,sans-serif;
-            font-size: 3rem; color: #000;
-            word-wrap:break-word; overflow-wrap: break-word; hyphens: auto; 
-            display: block;
-            margin: 0 auto;
-            max-width: 600px;
-            min-width: 290px;
-            padding: 0 2.5rem 3rem 2.5rem;
-        }
+            background: #fff;  color: #111;
+            word-wrap: break-word;  overflow-wrap: break-word;  hyphens: auto; 
+            max-width: 600px;  min-width: 240px;
+            margin:  0 auto;  padding: 0 5rem;
+            font-family: serif, sans-serif;
+            font-size: 4rem;  font-weight: 400; }
 
-        footer, aside, div, h1 {
-            padding: 0; margin: 1rem 0rem;
-        }
+        body > * { margin: 0;  padding: 0; }
 
-        header, section {
-            margin: 0;
+        header { border-bottom: 1rem #eee solid; font-size: 0; }
+        header > * {
+            display: inline-block;
+            background: red;  color: white;
+            width: 10rem;  height: 10rem;
+            padding: 5rem 2rem 2rem 2rem;
         }
+        header svg { stroke: white;  fill: red; }
+        header div { font-size: 5rem;  text-align: center; }
 
+
+        h1 {font-size: 9rem; font-weight: 600; color:#555; margin: 0rem 0 0rem 0;  padding: 3rem 0 1rem 0;}
+        h2 {font-size: 8rem; font-weight: 400; color:#555; margin: 4rem 0 1rem 0;  padding: 3rem 0 0rem 0;}
+        h3 {font-size: 6rem; font-weight: 400; color:#555; margin: 4rem 0 1rem 0;  padding: 3rem 0 0rem 0;}
+
+        div { margin: 2rem 0; padding: 0; }
+        p   { margin: 2rem 0; padding: 0; }
+
+        section {}
         section > div {
             margin: 0;
-            border-left: .5rem #bbb solid;
-            padding: 0rem 0rem 1rem 2rem;
+            padding: 2rem 0rem 2rem 2rem;
+            border-left: 2rem #eee solid;
         }
-
-        header {
-            border-bottom: 1rem #ddd solid;
-            padding: 0; margin: 0;
-            font-size: 0;
-        }
-    
-        header svg {
-            stroke: white; fill: red; background: red;
-            width: 7rem; height: 7rem; 
-            padding: 5rem 1rem 1rem 1rem;
-        }
-
-        header div {
-            display: inline-block;
-            background: red; color: white;
-            margin: 0;
-            height: 7rem; width: 7rem; 
-            text-align: center;
-            line-height: 7rem;
-            padding: 1rem;
-            font-size: 3rem;
-        }
-
-        header svg:hover { background: linear-gradient(yellow,red); }
-
 
         footer {
-            margin-top: 4rem; 
-            border-top: 1rem solid #eee; font-size: 2.5rem;
-            padding: 1rem 0; 
-            text-align: left;
+            font-size: 4rem;  text-align: left;
+            margin:  6rem 0;  padding: 1rem 0;
+            border-top: 1rem solid #eee;
         }
-        footer > div { margin: 0;}
 
+        footer > div {
+            margin: 0; padding: 0;
+        }
 
-        h1 {color:#555; font-size: 7rem; font-weight:600; margin: 2rem 0rem;}
-        h2, h3, h4, h5 {color:#555; padding-bottom: 0rem; margin: 4rem 0 1rem 0; font-weight:400;}
-        h3, h4, h5 {font-size: 4rem;}
-        h2 {font-size: 5rem;} 
+        
+        hr {border-top: 1px solid #555; border-width:0; height:0; margin-top: 6rem;}
+        
 
-        hr {border-top: 1px solid #555; border-width:0; height:0; margin-top: 3rem;}
-        p  {padding: 1rem 0rem;}
-        a  {text-decoration:none; color:#17f; padding:0; outline:none;}
+        pre, .code {
+            font-size: 3rem;  font-family: monospace;  font-weight: 100;  
+            color: #333;  background-color: #eee;  border-radius: 1rem;  }
+
+        pre   { padding: 1rem 2rem;  display: block;  white-space: pre-wrap; }
+        .code { padding: 0rem 1rem;  display: inline; }
+
+        .highlight { padding: 0rem 1rem;  display: inline;  background-color: yellow;  border-radius: 1rem; }
+        
+        a { font-size: 4rem;  padding: 0rem 1rem;  
+            color:#17f;  text-decoration:none; outline:none; }
         a:active {color:#f51;} 
         a:hover, a:focus {color:#f60;}
-        
-        pre {
-            display: block; color: #444; background-color: #eee; padding: 2rem; white-space: pre-wrap;
-            font-size: 2rem; border-radius: 1rem;
-        }
-        .highlight {
-            padding: 0 1rem; background-color: yellow; border-radius: .5rem;
-        }
-        .code {
-            font-family: monospace; font-size: 2.5rem;
-            padding: 0 1rem; background-color: #eee; border-radius: .5rem;   
-        }
+
         -->
     </style>
 </head>
@@ -116,7 +97,7 @@
     <header>
         <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 100 100"
             	width="7rem" fill="#333" stroke="#ddd" onclick="location.href='https://gonn.org/';">
-        	<title>[++] Gonn</title><desc><div>[++]</div></desc>
+        	<title>[++]Gon</title><desc><div>[++]</div></desc>
         	<g id="dsyim" stroke-width="4">
     		    <path id="map" d="M5,5V35 C5,35 05,45 10,50 C10,50 05,55 5,65 V95H35 C35,95 45,95 50,90 C50,90 55,95 65,95 H95V65 C95,65 95,55 90,50 C90,50 95,45 95,35 V5H65 C65,5 55,5 50,10 C50,10 45,5 35,5 H5Z"/>
         		<circle id="shield" cx="50" cy="50" r="30"/>
@@ -124,35 +105,36 @@
         	</g>
         </svg>        
     </header>
-    
 
-    <h1>Hello</h1>
+    <h1>Body-H1</h1>
     <div>    
-        This page intentionally left blank.
+        Body-Div
     </div>
 
     <section>
-        <h2>Hello another</h2>
+        <h2>Body-Section-H2</h2>
         <div>
-            Some other info!
+            Body-Section-Div
         </div>
         <div>
-            Another, result of <span class="code">abc=def;</span><br>
-            test2
-            <pre>some pre stuff here there</pre>
-
+            Body-Section-Div <span class="code">Body-Section-Div-Span:Code</span><br>
+            or simply using a properties variable
+            <pre>Body-Section-Div-Pre</pre>
+            Body-Section-Div...
         </div>
         <div>
-            blah
-            <a>some link</a> and some <span class="highlight">important thing</span>
+            Body-Section-Div...
+            <a>Body-Section-Div-A</a> and some <span class="highlight">Body-Section-Div-Span:Highlight</span>
         </div>
+        <h2>Body-Section-H2</h2>
+        <div>Body-Section-Div</div>
+        <h3>Body-Section-H3</h3>
+        <div>Body-Section-Div</div>
     </section>
 
     <footer>
-        <div>
-            some other info
-        </div>
-        &copy; 2022-2023 Gonn
+        <div>Body-Footer-Div</div>
+        &copy; 2022-2023 Body-Footer
     </footer>
 </body>
 </html>
