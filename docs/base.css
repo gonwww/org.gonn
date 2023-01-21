@@ -1,36 +1,163 @@
-/*
-    Base CSS Stylesheet for gonn.org
-    (c) 2022-2023 Gon Yi.
-*/
 
+/* START CSS */
 
 /* =============== BASE =============== */
-html { font-size:6px; padding:0; margin:0;} 
-body { background:#fff; padding:0; margin:0;
-    font-family:"Times","Times New Roman",serif,sans-serif;
-    font-size: 3rem; color: #000;
-    word-wrap:break-word; overflow-wrap: break-word; hyphens: auto; }
-    
-footer, aside, div, h1 {
-    padding: 0; margin: 1rem 3rem; max-width: 200rem;
+
+/* TOP LEVEL */
+
+
+html { 
+    font-size: 4px;
+    margin: 0;  
+    padding: 0; 
+    display: block; 
 }
 
-header, section {margin: 0 3rem; padding-bottom: 0; max-width: 200rem; }
-footer {margin-top: 4rem; padding: 1rem 0; border-top: 1px solid #555; font-size:3rem;}
+body { 
+    background: #fff;  
+    color: #333;
+    font-family: serif, sans-serif;
+    font-size: 4rem;  
+    font-weight: 400; 
+    line-height: 5rem;
 
-h1 {color:#555; font-size: 7rem; font-weight:600; margin: 2rem 3rem;}
-h2, h3, h4, h5 {color:#555; padding-bottom: 0rem; margin: 4rem 0 1rem 0; font-weight:400;}
-h3, h4, h5 {font-size: 4rem;}
-h2 {font-size: 5rem;} 
+    margin:  0 auto;  
+    padding: 0 5rem;
+    max-width: 600px; 
+    min-width: 240px;
 
-hr {border-top: 1px solid #555; border-width:0; height:0; margin-top: 3rem;}
-p  {padding: 1rem 0rem;}
-a {text-decoration:none; color:#17f; padding:0; outline:none;}
+    word-wrap: break-word;  
+    overflow-wrap: break-word;  
+    hyphens: auto; 
+}
+
+header {
+    display: block; 
+    padding: 0; 
+    margin: 0 0 3rem 0;
+    border-bottom: 1px #111 solid;
+}
+
+div {
+    display: block; 
+    margin: 0rem; 
+    padding: 0rem;
+}
+
+p   {
+    display: block; 
+    margin: 0 0rem; 
+    padding: 2rem 0;
+}
+
+section {
+    display: block; 
+    margin: 0rem;
+    padding: 0;
+}
+
+
+footer {
+    display: block; 
+    font-size: 4rem;  
+    text-align: left;
+    margin:  5rem 0;  
+    padding: 2rem 0;
+    border-top: 1px solid #111;
+}
+
+
+h1 {font-size: 9rem; font-weight: 600; color:#333; margin: 3rem 0rem;  padding: 2rem 0 1rem;}
+h2 {font-size: 8rem; font-weight: 400; color:#111; margin: 3rem 0rem;  padding: 2rem 0 1rem;}
+h3 {font-size: 6rem; font-weight: 400; color:#111; margin: 3rem 0rem;  padding: 2rem 0 1rem;}
+h4 {font-size: 5rem; font-weight: 400; color:#111; margin: 3rem 0rem;  padding: 2rem 0 1rem;}
+h5 {font-size: 4rem; font-weight: 400; color:#111; margin: 3rem 0rem;  padding: 2rem 0 1rem;}
+
+hr {border-width: 0; border-top: 1px solid #555; padding: 0; margin: 3rem 0;}
+
+pre {
+    font-family: monospace; font-size: 3rem;
+    padding: 2rem; 
+    margin: 2rem 0;
+    display: block;  white-space: pre-wrap;   font-weight: 100;  
+    color: #333;  background-color: #eee;  border-radius: 1rem;
+}
+
+
+b  { font-weight: 800; }
+i  { font-style: italic; }
+small { font-size: 3rem; }
+
+a { font-size: 4rem;  padding: 0rem 1rem;  
+    color:#17f;  text-decoration:none; outline:none; }
 a:active {color:#f51;} 
 a:hover, a:focus {color:#f60;}
-pre {display: block; color: #555; background-color: #eee; padding: 1rem; white-space: pre-wrap;}
-.logo {stroke: white; fill: red; background: red; height: 7rem; width: 7rem; padding: 5rem 1rem 1rem 1rem;}
-.logo:hover {background: linear-gradient(yellow,red);}
+
+code { 
+    font-family: monospace; font-size: 3rem; color: #333;  
+    padding: 0rem 2rem;      
+    background-color: #eee;  
+    border-radius: 1rem;
+}
+
+header div:has(img) { display: inline-block; background: #00A0DF; padding: 5rem 1rem 1rem;}
+
+.indent {
+    padding-left: 4rem; 
+    border-left: 1rem solid #eee;
+}
+
+pre.trim { white-space: pre-line; }
+
+@media print {
+    @page {
+        size: 8.5in 11in;
+        margin: .75in;
+    }
+
+    header {
+        display: none;
+    }
+
+    footer::after,footer::before {
+        word-wrap: normal;
+        overflow-wrap: normal;
+        white-space: nowrap;
+        border: none;
+        position: fixed;
+        transform: rotate(-45deg);
+        font-family: sans-serif, serif;
+        font-size: 0.9in;
+        line-height: 0.9in;
+        font-weight: 800;
+        color: rgba(0, 0, 0, 0.07);
+        left: 0;
+        white-space: pre;
+        content: "\aGON-Y-YI\a"
+    }
+
+    footer::after  {top: 15%; content: "\a (C) GON-Y-YI\a";}
+    footer::before {top: 50%; content: "\a (C) GON-Y-YI\a";}
+    
+    .must-print {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust:exact !important;
+        color-adjust: exact !important;
+    }
+
+    a, a:link, a:visited, a:hover {
+        text-decoration: none;
+        color: black;
+    }
+    a[href]::after {
+        content: " <" attr(href) "> ";
+        font-style: italic;
+    }
+    pre, code {
+        border: 1px solid black;
+    }
+}
+
 
 
 /* =============== FORM =============== */
