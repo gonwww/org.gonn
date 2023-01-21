@@ -100,7 +100,13 @@ code {
     border-radius: 1rem;
 }
 
-header div:has(img) { display: inline-block; background: red; padding: 5rem 1rem 1rem;}
+header div:has(svg),
+header div:has(object),
+header div:has(img) { 
+    display: inline-block; 
+    background: red; 
+    padding: 5rem 1rem 1rem;
+}
 
 .indent {
     padding-left: 4rem; 
