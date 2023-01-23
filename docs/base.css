@@ -147,7 +147,6 @@ pre.trim { white-space: pre-line; }
         color: rgba(0, 0, 0, 0.07);
         left: 0;
         white-space: pre;
-        content: "\aGON-Y-YI\a"
     }
 
     footer::after  {top: 15%; content: "\a (C)GON-Y-YI \a";}
