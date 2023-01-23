@@ -35,7 +35,7 @@ header {
     display: block; 
     padding: 0; 
     margin: 0 0 3rem 0;
-    border-bottom: 1px #111 solid;
+    border-bottom: 1px solid #344;
 }
 
 div {
@@ -63,7 +63,7 @@ footer {
     text-align: left;
     margin:  5rem 0;  
     padding: 2rem 0;
-    border-top: 1px solid #111;
+    border-top: 1px solid #344;
 }
 
 
@@ -106,6 +106,7 @@ header div, .logo {
     background: red; 
     padding: 5rem 1rem 1rem;
 }
+
 header div img, 
 header div svg, 
 header div object {
