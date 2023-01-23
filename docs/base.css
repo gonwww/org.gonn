@@ -88,8 +88,7 @@ b  { font-weight: 800; }
 i  { font-style: italic; }
 small { font-size: 3rem; }
 
-a { font-size: 4rem;  padding: 0rem 1rem;  
-    color:#17f;  text-decoration:none; outline:none; }
+a { font-size: 4rem; color:#17f;  text-decoration:none; outline:none; }
 a:active {color:#f51;} 
 a:hover, a:focus {color:#f60;}
 
