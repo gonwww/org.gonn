@@ -104,7 +104,7 @@ code {
 header div, .logo { 
     display: inline-block; 
     background: red; 
-    padding: 5rem 1rem 1rem;
+    padding: 7rem 1rem 1rem;
     height: 10rem;
 }
 
@@ -141,8 +141,8 @@ pre.trim { white-space: pre-line; }
         position: fixed;
         transform: rotate(-45deg);
         font-family: sans-serif, serif;
-        font-size: 0.9in;
-        line-height: 0.9in;
+        font-size: 0.7in;
+        line-height: 0.7in;
         font-weight: 800;
         color: rgba(0, 0, 0, 0.07);
         left: 0;
@@ -151,7 +151,7 @@ pre.trim { white-space: pre-line; }
     }
 
     footer::after  {top: 15%; content: "\a (C) GON-Y-YI\a";}
-    footer::before {top: 50%; content: "\a (C) GON-Y-YI\a";}
+    footer::before {top: 50%; content: "\a GONN.ORG\a";}
     
     .must-print {
         -webkit-print-color-adjust: exact !important;
