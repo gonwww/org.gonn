@@ -139,7 +139,7 @@ pre.trim { white-space: pre-line; }
         white-space: nowrap;
         border: none;
         position: fixed;
-        transform: rotate(-45deg);
+        transform: rotate(-30deg);
         font-family: sans-serif, serif;
         font-size: 0.7in;
         line-height: 0.7in;
@@ -150,8 +150,8 @@ pre.trim { white-space: pre-line; }
         content: "\aGON-Y-YI\a"
     }
 
-    footer::after  {top: 15%; content: "\a (C) GON-Y-YI\a";}
-    footer::before {top: 50%; content: "\a GONN.ORG\a";}
+    footer::after  {top: 15%; content: "\a (C)GON-Y-YI \a";}
+    footer::before {top: 50%; content: "\a GONN.ORG \a";}
     
     .must-print {
         -webkit-print-color-adjust: exact !important;
