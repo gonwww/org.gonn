@@ -101,12 +101,7 @@ code {
 }
 
 
-header:has(svg),
-header:has(object),
-header:has(img),
-header div:has(svg),
-header div:has(object),
-header div:has(img) { 
+header div, .logo { 
     display: inline-block; 
     background: red; 
     padding: 5rem 1rem 1rem;
