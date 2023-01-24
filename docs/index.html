@@ -29,6 +29,11 @@
                 <img src="/dsyim-bg.svg" title="Gonn">
 			</object>
 		</div>
+		<!-- For future, create some library that can add QR code when the page
+			is printed. create a hidden div here with ID="qrCode", on-before-print, 
+			it will generate QR code and show, and on-after-print, it will be
+			hidden again. Use `window.onbeforeprint = () => doSomething();`
+			and `window.onafterprint = () => doSomething();`. -->
 	</header>
 
 	<h1>Hello</h1>
