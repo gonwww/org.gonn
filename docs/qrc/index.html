@@ -42,7 +42,7 @@
         <p>QR Code</p>
     </div>
     <div>
-        <textarea id="txt" class="block" rows="5" style="width:100%;" placeholder="Data for QR Code" onclick="this.select();" onkeydown="enter(this);"></textarea>
+        <textarea id="txt" class="block" rows="5" style="width:100%;" placeholder="Data for QR Code" onclick="this.select();"></textarea>
         <button id="qr-code" accesskey="C">Create</button>
     </div> 
 
@@ -74,8 +74,12 @@
             });
         
         // When the encrypt button is clicked
-        btnCreate.addEventListener('click', ()=> {qrCode.makeCode(txt.value); txt.focus();});
-        txt.addEventListener('keyup', (e) => {if(e.keyCode==13) {qrCode.makeCode(txt.value); txt.focus();}});
+        let run = ()=> {
+            qrCode.makeCode(txt.value.replace(/\n$/, ""));
+            txt.focus();
+        };
+        btnCreate.addEventListener('click', ()=> run());
+        txt.addEventListener('keyup', (e) => {if(e.keyCode==13) run()});
         txt.focus();
         -->
     </script>
