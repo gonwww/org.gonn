@@ -47,7 +47,7 @@
     </div> 
 
 
-    <div id="qr-result" style="width:40rem; height:40rem; margin: 5rem 0; background:#eee"></div>
+    <div id="qr-result" style="width:30rem; height:30rem; margin: 5rem 0; background:red"></div>
 
 
     <footer>
@@ -65,10 +65,10 @@
 
         let qrCode = new QRCode(result, {
                 	text: "https://gonn.org/",
-                	width: "160",
-                	height: "160",
-                	colorDark : "#000000",
-                	colorLight : "#ffffff",
+                	width: "120",
+                	height: "120",
+                	colorDark : "#333",
+                	colorLight : "transparent",
                 	correctLevel : QRCode.CorrectLevel.M
             });
         
