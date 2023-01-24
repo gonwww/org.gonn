@@ -122,6 +122,10 @@ header div object {
 
 pre.trim { white-space: pre-line; }
 
+
+
+/* =============== PRINT =============== */
+
 @media print {
     @page {
         size: 8.5in 11in;
