@@ -86,7 +86,7 @@
 			
 			// if idx is -1, there's no ? or #.
 			if(idx < 0) return; // if not found, finish
-			txt.value = url.substring(idx);
+			txt.value = decodeURI(url).substring(1+idx);
 			// console.log(url.substring(idx));	
 		}; fillTxtValue();
         
