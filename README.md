@@ -29,18 +29,29 @@
 
 ## Notes
 
-(1) Alternate way to deal with image
+__(1) Alternate way to deal with image__
 
 ```html
 <div>
 	<object data="/dsyim-bg.svg" type="image/svg+xml">
               <img src="/dsyim-bg.svg" title="Gonn">
 	</object>
+</div>
+```
+
+OR use text fallback
+
+```html
+<div>
+	<object data="/dsyim-bg.svg" type="image/svg+xml">
+        <b style="color:#eee;">[++]</b>
+	</object>
 </div>	
 ```	
 
 
-(2) QR Code
+
+__(2) QR Code__
 
 For future, create some library that can add QR code when the page
 is printed. create a hidden div in the header with an ID="qrCode", 
