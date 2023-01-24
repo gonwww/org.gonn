@@ -57,8 +57,11 @@
     
     <script src="/qrc/qcode.min.js"></script>
     
-    <script>
-        <!--
+    <script><!--
+        var txt = document.getElementById("txt");
+        var btnCreate = document.getElementById("qr-code");
+        var result = document.getElementById("qr-result"); 
+                
         // FILL THE TXT BOX FIRST
         let fillTxtValue = () => {
             let url = document.URL;
@@ -69,11 +72,7 @@
 			if(idx < 0) return; // if not found, finish
 			txt.value = decodeURI(url).substring(1+idx);
 			// console.log(url.substring(idx));	
-		}; fillTxtValue();
-
-        var txt = document.getElementById("txt");
-        var btnCreate = document.getElementById("qr-code");
-        var result = document.getElementById("qr-result");        
+		}; fillTxtValue();       
 
         let qrCode = new QRCode(result, {
                 	text: "https://gonn.org/",
@@ -94,7 +93,7 @@
         btnCreate.addEventListener('click', ()=> run());
         txt.addEventListener('keyup', (e) => {if(e.keyCode==13) run()});
         txt.focus();
-        -->
+        
     </script>
 
 </body>
