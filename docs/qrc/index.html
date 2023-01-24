@@ -59,6 +59,18 @@
     
     <script>
         <!--
+        // FILL THE TXT BOX FIRST
+        let fillTxtValue = () => {
+            let url = document.URL;
+			let idx1 = url.indexOf("?"), idx2 = url.indexOf("#");
+			let idx = (idx1<0)? idx2 : (idx2<0)? idx1 : (idx1<idx2)? idx1 : idx2;
+			
+			// if idx is -1, there's no ? or #.
+			if(idx < 0) return; // if not found, finish
+			txt.value = decodeURI(url).substring(1+idx);
+			// console.log(url.substring(idx));	
+		}; fillTxtValue();
+
         var txt = document.getElementById("txt");
         var btnCreate = document.getElementById("qr-code");
         var result = document.getElementById("qr-result");        
@@ -78,18 +90,7 @@
             qrCode.makeCode(txt.value.replace(/\n$/, ""));
             txt.focus();
         };
-        
-        let fillTxtValue = () => {
-            let url = document.URL;
-			let idx1 = url.indexOf("?"), idx2 = url.indexOf("#");
-			let idx = (idx1<0)? idx2 : (idx2<0)? idx1 : (idx1<idx2)? idx1 : idx2;
-			
-			// if idx is -1, there's no ? or #.
-			if(idx < 0) return; // if not found, finish
-			txt.value = decodeURI(url).substring(1+idx);
-			// console.log(url.substring(idx));	
-		}; fillTxtValue();
-        
+                
         btnCreate.addEventListener('click', ()=> run());
         txt.addEventListener('keyup', (e) => {if(e.keyCode==13) run()});
         txt.focus();
