@@ -20,17 +20,6 @@
     <link rel="apple-touch-icon" href="/favicon.png" sizes="any">
     <link rel="stylesheet" type="text/css" href="/base.css">
     <title>Enc - Gonn</title>
-    <script>
-        <!--
-        function enter(e) {
-            if(e.key === 'Enter') {
-                console.log("X" + e.key);
-                draw();
-            }
-        }
-        -->
-    </script>
-    
 </head>
     
 <body>
@@ -51,13 +40,14 @@
     <h1>QR Code Generator</h1>
     <div>
         <p>QR Code</p>
-        
-        <input type="text" id="txt" class="block" style="width:100%;" placeholder="Data for QR Code" autocomplete="off" onclick="this.select();" onkeydown="enter(this);">
+    </div>
+    <div>
+        <textarea id="txt" class="block" rows="5" style="width:100%;" placeholder="Data for QR Code" onclick="this.select();" onkeydown="enter(this);"></textarea>
         <button id="qr-code" accesskey="C">Create</button>
     </div> 
 
 
-    <div id="qr-result" style="width:40rem; height:40rem; margin: 2rem 0; background:#eee"></div>
+    <div id="qr-result" style="width:40rem; height:40rem; margin: 5rem 0; background:#eee"></div>
 
 
     <footer>
@@ -73,16 +63,18 @@
         var btnCreate = document.getElementById("qr-code");
         var result = document.getElementById("qr-result");        
 
-        // When the encrypt button is clicked
-        let draw = () => { new QRCode(result, {
-                	text: txt.value,
+        let qrCode = new QRCode(result, {
+                	text: "https://gonn.org/",
                 	width: "160",
                 	height: "160",
                 	colorDark : "#000000",
                 	colorLight : "#ffffff",
                 	correctLevel : QRCode.CorrectLevel.M
-            });};
-        btnCreate.addEventListener('click', draw);
+            });
+        
+        // When the encrypt button is clicked
+        btnCreate.addEventListener('click', ()=> {qrCode.makeCode(txt.value); txt.focus();});
+        txt.addEventListener('keyup', (e) => {if(e.keyCode==13) {qrCode.makeCode(txt.value); txt.focus();}});
         txt.focus();
         -->
     </script>
