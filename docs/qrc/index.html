@@ -20,6 +20,16 @@
     <link rel="apple-touch-icon" href="/favicon.png" sizes="any">
     <link rel="stylesheet" type="text/css" href="/base.css">
     <title>Enc - Gonn</title>
+    <script>
+        <!--
+        function enter(e) {
+            if(e.key === 'Enter') {
+                console.log("X" + e.key);
+                draw();
+            }
+        }
+        -->
+    </script>
     
 </head>
     
@@ -42,11 +52,13 @@
     <div>
         <p>QR Code</p>
         
-        <input type="text" id="txt" class="block" style="width:100%;" placeholder="Data for QR Code" autocomplete="off" onclick="this.select();">
+        <input type="text" id="txt" class="block" style="width:100%;" placeholder="Data for QR Code" autocomplete="off" onclick="this.select();" onkeydown="enter(this);">
         <button id="qr-code" accesskey="C">Create</button>
     </div> 
 
-    <div id="qr-result" style="width:20rem; height:20rem; margin: 2rem 0; border: 1px solid gray;"></div>
+
+    <div id="qr-result" style="width:40rem; height:40rem; margin: 2rem 0; background:#eee"></div>
+
 
     <footer>
         &copy; 2022-2023 Gonn
@@ -57,13 +69,20 @@
     
     <script>
         <!--
-        var txt = document.getElementById('txt');
-        var btnCreate = document.getElementById('qr-code');
+        var txt = document.getElementById("txt");
+        var btnCreate = document.getElementById("qr-code");
+        var result = document.getElementById("qr-result");        
 
         // When the encrypt button is clicked
-        btnCreate.addEventListener('click', function () {
-            new QRCode("qr-result", txt.value);
-        });
+        let draw = () => { new QRCode(result, {
+                	text: txt.value,
+                	width: "160",
+                	height: "160",
+                	colorDark : "#000000",
+                	colorLight : "#ffffff",
+                	correctLevel : QRCode.CorrectLevel.M
+            });};
+        btnCreate.addEventListener('click', draw);
         txt.focus();
         -->
     </script>
