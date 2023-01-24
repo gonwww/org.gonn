@@ -75,7 +75,7 @@
 		}; fillTxtValue();       
 
         let qrCode = new QRCode(result, {
-                	text: "https://gonn.org/",
+                	text: (txt.value.length > 0 ? txt.value : "https://gonn.org/"),
                 	width: "120",
                 	height: "120",
                 	colorDark : "#333",
@@ -94,7 +94,7 @@
         txt.addEventListener('keyup', (e) => {if(e.keyCode==13) run()});
         txt.focus();
         
-    </script>
+    --></script>
 
 </body>
 </html>
