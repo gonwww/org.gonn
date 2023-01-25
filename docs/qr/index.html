@@ -70,9 +70,8 @@
 			let idx = (idx1<0)? idx2 : (idx2<0)? idx1 : (idx1<idx2)? idx1 : idx2;
 			
 			// if idx is -1, there's no ? or #.
-			return (idx<0) ? 
-			    "https://gonn.org/" : 
-			    decodeURI(url).substring(1+idx);
+			txt.value = (idx<0) ? "https://gonn.org/" 
+			    : decodeURI(url).substring(1+idx);
 		}; 
 		fillTxtValue();       
 
