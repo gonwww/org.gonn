@@ -44,6 +44,7 @@
     <div>
         <textarea id="txt" class="block" rows="5" style="width:100%;" placeholder="Data for QR Code" onclick="this.select();"></textarea>
         <button id="qr-code" accesskey="C">Create</button>
+        <button onclick="downloadObject('qr-code', 'qr-code.svg');">Download</button>
     </div> 
 
 
@@ -89,6 +90,41 @@
             qrCode.makeCode(txt.value.replace(/\n$/, ""));
             txt.focus();
         };
+        
+
+        function blobToDataURL(blob, callback) {
+            var a = new FileReader();
+            a.onload = function(e) {callback(e.target.result);}
+            a.readAsDataURL(blob);
+        }
+
+        function saveAs(uri, filename) {
+          var link = document.createElement('a');
+          if (typeof link.download === 'string') {
+            link.href = uri;
+            link.download = filename;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+          } else {
+            window.open(uri);
+          }
+        }
+
+        function downloadObject(objID, filename) {
+            t = document.getElementById(objID)
+            if(t == null) return false;
+            t2 = t.contentDocument;
+            if(t2 == null) return false;
+            t3 = t2.documentElement
+            if(t3 == null) return false;
+            t4 = new XMLSerializer().serializeToString(t3)
+            t5 = new Blob([t4],{type: "image/svg+xml;charset=utf-8"})
+            
+            blobToDataURL(t5, function(dataurl){
+                saveAs(dataurl, filename)
+            });
+        }                
                 
         btnCreate.addEventListener('click', ()=> run());
         txt.addEventListener('keyup', (e) => {if(e.keyCode==13) run()});
