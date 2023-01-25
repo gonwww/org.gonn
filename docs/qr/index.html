@@ -70,10 +70,11 @@
 			let idx = (idx1<0)? idx2 : (idx2<0)? idx1 : (idx1<idx2)? idx1 : idx2;
 			
 			// if idx is -1, there's no ? or #.
-			if(idx < 0) return; // if not found, finish
-			txt.value = decodeURI(url).substring(1+idx);
-			// console.log(url.substring(idx));	
-		}; fillTxtValue();       
+			return (idx<0) ? 
+			    "https://gonn.org/" : 
+			    decodeURI(url).substring(1+idx);
+		}; 
+		fillTxtValue();       
 
         let qrCode = new QRCode(result, {
                 	text: (txt.value.length > 0 ? txt.value : "https://gonn.org/"),
