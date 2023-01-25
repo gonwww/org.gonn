@@ -19,6 +19,7 @@
     <link rel="alternate icon" href="/favicon.ico">
     <link rel="apple-touch-icon" href="/favicon.png" sizes="any">
     <link rel="stylesheet" type="text/css" href="/base.css">
+    <!-- <link rel="stylesheet" type="text/css" href="../base.css"> -->
     <title>QR - Gonn</title>
 </head>
     
@@ -38,20 +39,18 @@
 	</header>
     
     <h1>QR</h1>
+    <div>QR Code Generator and Examples</div> 
+
     <div>
-        <p>
-            QR Code Generator. Few examples: 
-            <div>
-                <button onclick="fnEx('WIFI:T:WPA;\nS:GonHomeWifi;\nP:GonPwd12345;\nH;');">WiFi</button>
-                <button onclick="fnEx('SMSTO:1-501-501-5001:You are awesome, Gonn!');">Prefilled SMS</button>
-                <button onclick="fnEx('MATMSG:TO:john.doe@gongress.gov;\nSUB:About new tax;\nBODY:Did you raise tax? Ugh!!;;');">Prefilled Email</button>
-                <button onclick="fnEx('https://gonn.org/');">URL</button>
-                <button onclick="fnEx('some@mail.com');">Email</button>                
-                <button onclick="fnEx('TEL:1-123-123-1234');">Phone</button>
-                <button onclick="fnEx('SMSTO:1-501-501-5001');">SMS</button>
-            </div>
-        </p>
+        <button onclick="fnEx('SMSTO:1-501-501-5001:You are awesome, Gonn!');">Prefilled SMS</button>
+        <button onclick="fnEx('MATMSG:TO:john.doe@gongress.gov;\nSUB:About new tax;\nBODY:Did you raise tax? Ugh!!;;');">Prefilled Email</button>
+        <button onclick="fnEx('WIFI:T:WPA;\nS:GonHomeWifi;\nP:GonPwd12345;\nH;');">WiFi</button>
+        <button onclick="fnEx('TEL:1-123-123-1234');">Phone</button>
+        <button onclick="fnEx('SMSTO:1-501-501-5001');">SMS</button>
+        <button onclick="fnEx('some@mail.com');">Email</button>
+        <button onclick="fnEx('https://gonn.org/');">URL</button>
     </div>
+
     <div>
         <textarea id="data" class="block" rows="5" style="width:100%;" placeholder="Input data for QR code"></textarea>
         <button accesskey="C" onclick="getQR();">Create</button>

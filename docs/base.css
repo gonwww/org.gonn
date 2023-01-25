@@ -81,8 +81,25 @@ pre {
     margin: 2rem 0;
     display: block;  white-space: pre-wrap;   font-weight: 100;  
     color: #333;  background-color: #eee;  border-radius: 1rem;
+    line-height: 4rem;
 }
 
+code { 
+    font-family: monospace; font-size: 3rem; color: #333;  
+    padding: 0rem 2rem;      
+    background-color: #eee;  
+    border-radius: 1rem;
+    line-height: 4rem;
+}
+
+kbd { 
+    font-family: monospace; font-size: 3rem; color: #333;
+    padding: 0rem 1rem;
+    border: 1px solid #555;
+    background-color: #ddd;  
+    border-radius: .5rem;
+    line-height: 4rem;
+}
 
 b  { font-weight: 800; }
 i  { font-style: italic; }
@@ -92,12 +109,6 @@ a { font-size: 4rem; color:#17f;  text-decoration:none; outline:none; }
 a:active {color:#f51;} 
 a:hover, a:focus {color:#f60;}
 
-code { 
-    font-family: monospace; font-size: 3rem; color: #333;  
-    padding: 0rem 2rem;      
-    background-color: #eee;  
-    border-radius: 1rem;
-}
 
 
 header div, .logo { 
@@ -185,17 +196,18 @@ pre.trim { white-space: pre-line; }
 label {font-size: 2.5rem; color: #ddd;}
 .block {display: block; margin: 2rem 0;}
 .btn, button, input, textarea {
-    margin:0;
-    border-radius: .5rem; border: .5rem solid #aaa;
+    margin:1 0rem;
+    border-radius: 1rem; border: .5rem solid #bbb;
     font-size: 4rem; 
-    padding: .5rem; outline: none;
+    /*line-height: 4rem;*/
+    padding: 0 2rem; outline: none;
     font-family:"Times","Times New Roman",serif,sans-serif;
 }
-.btn, button {background-color: #ccc; border-color: #ccc; color: #222; display: inline-block;}
+.btn, button {background-color: #ddd; border-color: #ddd; color: #222; display: inline-block;}
 .btn:hover, .btn:focus, .btn:active, button:hover, button:focus, button:active {
     border-color: #17f; background-color: #17f;color: #fff;}
-
-input, textarea {font-size:4rem; background-color: #fff; color: #555; box-sizing: border-box;}
+textarea { resize: vertical; }
+input, textarea {padding:  2rem; font-size:4rem; background-color: #fff; color: #555; box-sizing: border-box;}
 input:focus, textarea:focus, input:active, textarea:active {
     border-color: #17f; background-color: #fff; color: #333; caret-color: #000;}
 :-ms-input-placeholder  {color: #bbb; font-size: 4rem;}
