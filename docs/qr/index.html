@@ -114,9 +114,9 @@
         function downloadObject(objID, filename) {
             t = document.getElementById(objID)
             if(t == null) return false;
-            t2 = t.contentDocument;
-            if(t2 == null) return false;
-            t3 = t2.documentElement
+            t2 = t.getElementsByTagName("svg");
+            if(t2 == null || t2.length == 0) return false;
+            t3 = t2[0];
             if(t3 == null) return false;
             t4 = new XMLSerializer().serializeToString(t3)
             t5 = new Blob([t4],{type: "image/svg+xml;charset=utf-8"})
