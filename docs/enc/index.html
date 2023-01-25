@@ -35,9 +35,15 @@
 <body>
 	<header>
 		<div>
-			<object data="/dsyim-bg.svg" type="image/svg+xml">
-                <img src="/dsyim-bg.svg" title="Gonn">
-			</object>
+			<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 100 100"
+				height="40" width="40" fill="transparent" stroke="#eee">
+				<title>DSYiM</title><desc><b>[++]</b></desc>
+				<g id="dsyim" stroke-width="4">
+					<path id="map" d="M5,5V35 C5,35 05,45 10,50 C10,50 05,55 5,65 V95H35 C35,95 45,95 50,90 C50,90 55,95 65,95 H95V65 C95,65 95,55 90,50 C90,50 95,45 95,35 V5H65 C65,5 55,5 50,10 C50,10 45,5 35,5 H5Z"/>
+					<circle id="shield" cx="50" cy="50" r="30"/>
+					<path id="yi" d="M32,50H68 M44,38V62 M56,38V62"/>
+				</g>
+			</svg>	
 		</div>
 	</header>
     
@@ -45,8 +51,8 @@
     <div>
         <p>For AES-256-CBC (MD5)</p>
         
+        <input type="text" id="key" class="block" style="width:100%;" placeholder="Key" autocomplete="off" onclick="this.select();">        
         <textarea id="data" class="block" rows="5" style="width:100%;" placeholder="Encrypted or plain text" onclick="this.select();"></textarea>
-        <input type="text" id="key" class="block" style="width:100%;" placeholder="Secret key" autocomplete="off" onclick="this.select();">
 
         <button id="btnEnc" accesskey="E">Encrypt</button>
         <button id="btnDec" accesskey="D">Decrypt</button>
@@ -78,7 +84,7 @@
             boxData.value = out;
             boxData.select();
         });
-        boxData.select();
+        boxKey.focus();
         -->
     </script>
 </body>

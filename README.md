@@ -25,3 +25,45 @@
     files.
 - [X] G102 -- Change the color on `/enc` page to have more contrast.
 - [X] G103 -- Recreated DSYiM from the scratch. (1/4/2023, v52)
+
+
+## Notes
+
+__(1) Alternate way to deal with image__
+
+```html
+<div>
+	<object data="/dsyim-bg.svg" type="image/svg+xml">
+              <img src="/dsyim-bg.svg" title="Gonn">
+	</object>
+</div>
+```
+
+OR use text fallback
+
+```html
+<div>
+	<object data="/dsyim-bg.svg" type="image/svg+xml">
+        <b style="color:#eee;">[++]</b>
+	</object>
+</div>	
+```	
+
+
+
+__(2) QR Code__
+
+For future, create some library that can add QR code when the page
+is printed. create a hidden div in the header with an ID="qrCode", 
+on-before-print, it will generate QR code and show, 
+and on-after-print, it will be hide it back.
+
+```javascript
+window.onbeforeprint = () => doSomething();
+window.onafterprint = () => undoSomething();
+```
+
+
+
+
+	

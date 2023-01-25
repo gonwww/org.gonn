@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Copyright (c) 2022-2023 Gon Y. Yi -->
+	<base href="https://gonn.org/" target="_self"> 
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0">
+    <meta name="theme-color" content="#db8">
+    <meta name="robots" content="noindex,nofollow">
+    <meta name="author" content="Gon Y. Yi">
+    <meta name="description" content="Online AES-256-CBC (MD5) Encryption">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://gonn.org">
+    <meta property="og:site_name" content="Gonn">
+    <meta property="og:title" content="Online AES-256-CBC (MD5) Encryption">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="alternate icon" type="image/png" href="/favicon.png">
+    <link rel="alternate icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" href="/favicon.png" sizes="any">
+    <link rel="stylesheet" type="text/css" href="/base.css">
+    <title>QR - Gonn</title>
+</head>
+    
+<body>
+	<header>
+		<div>
+			<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 100 100"
+				height="40" width="40" fill="transparent" stroke="#eee">
+				<title>DSYiM</title><desc><b>[++]</b></desc>
+				<g id="dsyim" stroke-width="4">
+					<path id="map" d="M5,5V35 C5,35 05,45 10,50 C10,50 05,55 5,65 V95H35 C35,95 45,95 50,90 C50,90 55,95 65,95 H95V65 C95,65 95,55 90,50 C90,50 95,45 95,35 V5H65 C65,5 55,5 50,10 C50,10 45,5 35,5 H5Z"/>
+					<circle id="shield" cx="50" cy="50" r="30"/>
+					<path id="yi" d="M32,50H68 M44,38V62 M56,38V62"/>
+				</g>
+			</svg>	
+		</div>
+	</header>
+    
+    <h1>QR Code Generator</h1>
+    <div>
+        <p>QR Code</p>
+    </div>
+    <div>
+        <textarea id="txt" class="block" rows="5" style="width:100%;" placeholder="Data for QR Code" onclick="this.select();"></textarea>
+        <button id="qr-code" accesskey="C">Create</button>
+        <button onclick="downloadObject('qr-result', 'qr-code.svg');">Download</button>
+    </div> 
+
+
+    <div id="qr-result" style="width:30rem; height:30rem; margin: 5rem 0;"></div>
+
+
+    <footer>
+        &copy; 2022-2023 Gonn
+    </footer>
+    
+    
+    <script src="/qr/qcode.min.js"></script>
+    
+    <script><!--
+        var txt = document.getElementById("txt");
+        var btnCreate = document.getElementById("qr-code");
+        var result = document.getElementById("qr-result"); 
+                
+        // FILL THE TXT BOX FIRST
+        let fillTxtValue = () => {
+            let url = document.URL;
+			let idx1 = url.indexOf("?"), idx2 = url.indexOf("#");
+			let idx = (idx1<0)? idx2 : (idx2<0)? idx1 : (idx1<idx2)? idx1 : idx2;
+			
+			// if idx is -1, there's no ? or #.
+			if(idx < 0) return; // if not found, finish
+			txt.value = decodeURI(url).substring(1+idx);
+			// console.log(url.substring(idx));	
+		}; fillTxtValue();       
+
+        let qrCode = new QRCode(result, {
+                	text: (txt.value.length > 0 ? txt.value : "https://gonn.org/"),
+                	width: "120",
+                	height: "120",
+                	colorDark : "#333",
+                	colorLight : "transparent",
+                	correctLevel : QRCode.CorrectLevel.M,
+                	useSVG: true
+            });
+        
+        // When the encrypt button is clicked
+        let run = ()=> {
+            qrCode.makeCode(txt.value.replace(/\n$/, ""));
+            txt.focus();
+        };
+        
+
+        function blobToDataURL(blob, callback) {
+            var a = new FileReader();
+            a.onload = function(e) {callback(e.target.result);}
+            a.readAsDataURL(blob);
+        }
+
+        function saveAs(uri, filename) {
+          var link = document.createElement('a');
+          if (typeof link.download === 'string') {
+            link.href = uri;
+            link.download = filename;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+          } else {
+            window.open(uri);
+          }
+        }
+
+        function downloadObject(objID, filename) {
+            t = document.getElementById(objID)
+            if(t == null) return false;
+            t2 = t.getElementsByTagName("svg");
+            if(t2 == null || t2.length == 0) return false;
+            t3 = t2[0];
+            if(t3 == null) return false;
+            t4 = new XMLSerializer().serializeToString(t3)
+            t5 = new Blob([t4],{type: "image/svg+xml;charset=utf-8"})
+            
+            blobToDataURL(t5, function(dataurl){
+                saveAs(dataurl, filename)
+            });
+        }
+                
+        btnCreate.addEventListener('click', ()=> run());
+        txt.addEventListener('keyup', (e) => {if(e.keyCode==13) run()});
+        txt.focus();
+        
+    --></script>
+
+</body>
+</html>
