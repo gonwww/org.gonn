@@ -44,7 +44,7 @@
     <div>
         <textarea id="txt" class="block" rows="5" style="width:100%;" placeholder="Data for QR Code" onclick="this.select();"></textarea>
         <button id="qr-code" accesskey="C">Create</button>
-        <button onclick="downloadObject('qr-code', 'qr-code.svg');">Download</button>
+        <button onclick="downloadObject('qr-result', 'qr-code.svg');">Download</button>
     </div> 
 
 
@@ -124,7 +124,7 @@
             blobToDataURL(t5, function(dataurl){
                 saveAs(dataurl, filename)
             });
-        }                
+        }
                 
         btnCreate.addEventListener('click', ()=> run());
         txt.addEventListener('keyup', (e) => {if(e.keyCode==13) run()});
