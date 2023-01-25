@@ -37,18 +37,29 @@
 		</div>
 	</header>
     
-    <h1>QR Code Generator</h1>
+    <h1>QR</h1>
     <div>
-        <p>QR Code</p>
+        <p>
+            QR Code Generator. Few examples: 
+            <div>
+                <button onclick="fnEx('WIFI:T:WPA;\nS:GonHomeWifi;\nP:GonPwd12345;\nH;');">WiFi</button>
+                <button onclick="fnEx('SMSTO:1-501-501-5001:You are awesome, Gonn!');">Prefilled SMS</button>
+                <button onclick="fnEx('MATMSG:TO:john.doe@gongress.gov;\nSUB:About new tax;\nBODY:Did you raise tax? Ugh!!;;');">Prefilled Email</button>
+                <button onclick="fnEx('https://gonn.org/');">URL</button>
+                <button onclick="fnEx('TEL:1-123-123-1234');">Phone</button>
+                <button onclick="fnEx('SMSTO:1-501-501-5001');">SMS</button>
+                <button onclick="fnEx('MAILTO:some@mail.com');">Email</button>
+            </div>
+        </p>
     </div>
     <div>
-        <textarea id="txt" class="block" rows="5" style="width:100%;" placeholder="Data for QR Code" onclick="this.select();"></textarea>
-        <button id="qr-code" accesskey="C">Create</button>
-        <button onclick="downloadObject('qr-result', 'qr-code.svg');">Download</button>
+        <textarea id="data" class="block" rows="5" style="width:100%;" placeholder="Input data for QR code"></textarea>
+        <button accesskey="C" onclick="getQR();">Create</button>
+        <button accesskey="D" onclick="getQR();downloadObject('qrCode','qr-code.svg');">Download</button>
     </div> 
 
 
-    <div id="qr-result" style="width:30rem; height:30rem; margin: 5rem 0; padding: 1rem; border: 1px solid #ccc"></div>
+    <div id="qrCode" style="width:30rem; height:30rem; margin: 5rem 0; padding: 1rem; border: 1px solid #ccc"></div>
 
 
     <footer>
@@ -59,24 +70,23 @@
     <script src="/qr/qcode.min.js"></script>
     
     <script><!--
-        var txt = document.getElementById("txt");
-        var btnCreate = document.getElementById("qr-code");
-        var result = document.getElementById("qr-result"); 
-                
+        var dataInput = document.getElementById("data");
+        var dataOutput = document.getElementById("qrCode"); 
+
         // FILL THE TXT BOX FIRST
-        let fillTxtValue = () => {
+        var fillTxtValue = () => {
             let url = document.URL;
 			let idx1 = url.indexOf("?"), idx2 = url.indexOf("#");
 			let idx = (idx1<0)? idx2 : (idx2<0)? idx1 : (idx1<idx2)? idx1 : idx2;
-			
 			// if idx is -1, there's no ? or #.
-			txt.value = (idx<0) ? "https://gonn.org/" 
-			    : decodeURI(url).substring(1+idx);
-		}; 
-		fillTxtValue();       
+			dataInput.value = (idx<0) ? "https://gonn.org/" : decodeURI(url).substring(1+idx); 
+        }; 
+		fillTxtValue();
 
-        let qrCode = new QRCode(result, {
-                	text: (txt.value.length > 0 ? txt.value : "https://gonn.org/"),
+        var fnEx = (v) => {data.value = v; getQR();};
+
+        var qrCodeMaker = new QRCode(dataOutput, {
+                	text: (dataInput.value.length > 0 ? dataInput.value : "https://gonn.org/"),
                 	width: "120",
                 	height: "120",
                 	colorDark : "#333",
@@ -85,10 +95,10 @@
                 	useSVG: true
             });
         
-        // When the encrypt button is clicked
-        let run = ()=> {
-            qrCode.makeCode(txt.value.replace(/\n$/, ""));
-            txt.focus();
+        // When the "create" button is clicked
+        var getQR = ()=> {
+            qrCodeMaker.makeCode(dataInput.value.replace(/\n$/, ""));
+            dataInput.focus();
         };
         
 
@@ -112,24 +122,24 @@
         }
 
         function downloadObject(objID, filename) {
-            t = document.getElementById(objID)
+            var t = document.getElementById(objID)
             if(t == null) return false;
-            t2 = t.getElementsByTagName("svg");
+            var t2 = t.getElementsByTagName("svg");
             if(t2 == null || t2.length == 0) return false;
-            t3 = t2[0];
+            var t3 = t2[0];
             if(t3 == null) return false;
-            t4 = new XMLSerializer().serializeToString(t3)
-            t5 = new Blob([t4],{type: "image/svg+xml;charset=utf-8"})
+            var t4 = new XMLSerializer().serializeToString(t3)
+            var t5 = new Blob([t4],{type: "image/svg+xml;charset=utf-8"})
             
             blobToDataURL(t5, function(dataurl){
                 saveAs(dataurl, filename)
             });
         }
-                
-        btnCreate.addEventListener('click', ()=> run());
-        txt.addEventListener('keyup', (e) => {if(e.keyCode==13) run()});
-        txt.focus();
         
+        // listen for "enter" on text box.
+        dataInput.addEventListener('keyup', e => {if(e.keyCode==13) getQR()});
+        dataInput.focus();
+    
     --></script>
 
 </body>
