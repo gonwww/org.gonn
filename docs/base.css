@@ -67,11 +67,11 @@ footer {
 }
 
 
-h1 {font-size: 9rem; font-weight: 600; color:#333; margin: 3rem 0rem;  padding: 2rem 0 1rem;}
-h2 {font-size: 8rem; font-weight: 400; color:#111; margin: 3rem 0rem;  padding: 2rem 0 1rem;}
-h3 {font-size: 6rem; font-weight: 400; color:#111; margin: 3rem 0rem;  padding: 2rem 0 1rem;}
-h4 {font-size: 5rem; font-weight: 400; color:#111; margin: 3rem 0rem;  padding: 2rem 0 1rem;}
-h5 {font-size: 4rem; font-weight: 400; color:#111; margin: 3rem 0rem;  padding: 2rem 0 1rem;}
+h1 {font-size: 9rem; line-height: 9rem; font-weight: 600; color:#333; margin: 3rem 0rem;  padding: 2rem 0 1rem;}
+h2 {font-size: 8rem; line-height: 8rem; font-weight: 400; color:#111; margin: 3rem 0rem;  padding: 2rem 0 1rem;}
+h3 {font-size: 6rem; line-height: 6rem; font-weight: 400; color:#111; margin: 3rem 0rem;  padding: 2rem 0 1rem;}
+h4 {font-size: 5rem; line-height: 5rem; font-weight: 400; color:#111; margin: 3rem 0rem;  padding: 2rem 0 1rem;}
+h5 {font-size: 4rem; line-height: 4rem; font-weight: 400; color:#111; margin: 3rem 0rem;  padding: 2rem 0 1rem;}
 
 hr {border-width: 0; border-top: 1px solid #555; padding: 0; margin: 3rem 0;}
 
