@@ -31,39 +31,36 @@ body {
     hyphens: auto; 
 }
 
-header {
-    display: block; 
-    padding: 0; 
-    margin: 0 0 3rem 0;
-    border-bottom: 1rem solid #eee;
-}
 
-div {
-    display: block; 
-    margin: 0rem; 
-    padding: 0rem;
-}
-
-p   {
+p {
     display: block; 
     margin: 0 0rem; 
     padding: 2rem 0;
 }
 
-section {
+
+header {
+    /*background-color: #bbb;*/
     display: block; 
-    margin: 0rem;
-    padding: 0;
+    margin: 5rem 0 2rem 0;
+    padding: 1rem 0;
+    border-bottom: 1px solid #eee;
 }
 
+section, div {
+    display: block; 
+    margin: 1rem 0;
+    padding: 1rem 0;
+}
 
 footer {
+    /*background-color: #bbb;*/
     display: block; 
     font-size: 4rem;  
     text-align: left;
-    margin:  5rem 0;  
-    padding: 2rem 0;
-    border-top: 1rem solid #eee;
+    margin:  2rem 0;  
+    padding: 1rem 0;
+    border-top: 1px solid #eee;
 }
 
 
@@ -110,22 +107,6 @@ a:active {color:#f51;}
 a:hover, a:focus {color:#f60;}
 
 
-
-header div, .logo { 
-    display: inline-block; 
-    background: red; 
-    padding: 7rem 1rem 1rem;
-    height: 10rem;
-}
-
-header div img, 
-header div svg, 
-header div object {
-    vertical-align: bottom;
-    width: 10rem;
-    height: 10rem;
-}
-
 .indent {
     padding-left: 4rem; 
     border-left: 1rem solid #eee;
@@ -148,27 +129,27 @@ pre.trim { white-space: pre-line; }
     }
 
     header {
-        display: none;
+        margin-bottom: 7rem;
     }
 
-    footer::after,footer::before {
+    footer::after{
         word-wrap: normal;
         overflow-wrap: normal;
         white-space: nowrap;
         border: none;
         position: fixed;
-        transform: rotate(-30deg);
+        transform: rotate(-45deg);
         font-family: sans-serif, serif;
-        font-size: 0.7in;
-        line-height: 0.7in;
+        font-size: .5in;
+        line-height: 1in;
         font-weight: 800;
         color: rgba(0, 0, 0, 0.07);
-        left: 0;
+        top: 3in; left: 1in;
         white-space: pre;
     }
 
-    footer::after  {top: 15%; content: "\a (C)GON-Y-YI \a";}
-    footer::before {top: 50%; content: "\a GONN.ORG \a";}
+    footer::after {content: "GONN.ORG (C) GON YI";}
+
     
     .must-print {
         -webkit-print-color-adjust: exact !important;
