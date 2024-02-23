@@ -16,6 +16,8 @@
 - v1.0.9
     - 1/18/2022, now /logo/ can set background color of the page.
 
+- v1.0.10
+    - 2/22/2024, update main logo to have another bar -- komul
 
 ## Todo
 

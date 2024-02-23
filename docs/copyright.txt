@@ -1,4 +1,4 @@
-Copyright (C) 2022-2023 Gon Y. Yi. All rights reserved.
+Copyright (C) 2022-2024 Gon Y. Yi. All rights reserved.
 
 Unless otherwise stated, this will serve as a basic
 copyright and disclaimer for any software or artwork
